@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .quiz-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 20px auto;
+    }
+
+    .quiz {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    #question {
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin: 10px;
+    }
+
+    .button {
+        padding: 10px;
+        text-align: center;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+      }
+  </style>
+</head>
+
+<body>
+
+  <h1>O que são proposições?</h1>
+  <div>Proposições são declarações afirmativas ou negativas que podem ser consideradas verdadeiras ou falsas. Em
+    lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido. Elas
+    podem ser simples, como "2 é um número par", ou compostas, como "Se chove, então as ruas ficam molhadas". Por
+    enquanto, vamos analisar as proposições simples.</div>
+  <div>Proposições simples são declarações que expressam uma ideia única e podem ser avaliadas como verdadeiras ou
+    falsas de forma independente. Elas não contêm proposições subordinadas ou conectadas por operadores lógicos.</div>
+  <div>Exemplos de proposições simples incluem:</div>
+  <div>"O céu é azul."</div>
+  <div>"2 + 2 = 4."</div>
+  <div>"A lua é um satélite natural da Terra."</div>
+  <div>"Brasil ganhou a Copa do Mundo de 2002."</div>
+  <div>"1 é menor que 5."</div>
+
+  <h1>Agora, responda o quiz abaixo para verificar seus conhecimentos!</h1>
+  <div class="quiz-container">
+    <div class="quiz">
+      <h2>Quiz 1</h2>
+      <div id="question1">"O sol é uma estrela." é uma proposição?</div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('Veradeiro', 'result1')">É uma proposição</button>
+      </div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('Falso', 'result1')">Não é uma proposição</button>
+      </div>
+      <div id="result1"></div>
+    </div>
+
+    <div class="quiz">
+      <h2>Quiz 2</h2>
+      <div id="question2">"Pegue aquele livro para mim." é uma proposição?</div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('V', 'result2')">É uma proposição</button>
+      </div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('F', 'result2')">Não é uma proposição</button>
+      </div>
+      <div id="result2"></div>
+    </div>
+
+    <div class="quiz">
+      <h2>Quiz 3</h2>
+      <div id="question3">"7 é um número primo." é uma proposição?</div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('True', 'result3')">É uma proposição</button>
+      </div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('False', 'result3')">Não é uma proposição</button>
+      </div>
+      <div id="result3"></div>
+    </div>
+    <button class="button" onclick="window.location.href='Conteudo.html'">Voltar</button>
+  </div>
+
+  <script>
+    function checkAnswer(answer, resultId) {
+      if (answer === 'Veradeiro' || answer === 'F' || answer === 'True') {
+        document.getElementById(resultId).innerText = 'Você acertou!';
+      } else {
+        document.getElementById(resultId).innerText = 'Você errou, tente novamente.';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

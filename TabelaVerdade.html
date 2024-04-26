@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela Verdade</title>
+  <style>
+    .button {
+      padding: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Gerador de Tabela Verdade</h2>
+  <label for="expression">Expressão Lógica:</label>
+  <input type="text" id="expression" placeholder="Digite a expressão lógica">
+  <button class="button" onclick="generateTruthTable()">Gerar Tabela Verdade</button>
+  <div id="truthTable"></div>
+  <div id="evaluationResult"></div>
+
+  <script>
+    function navMainPage() {
+      window.location.href = "index.html";
+    }
+
+    function generateTruthTable() {
+      const expression = document.getElementById('expression').value;
+      const variables = getVariables(expression);
+      const tableHeader = '<tr><th>' + variables.join('</th><th>') + '</th><th>Resultado</th></tr>';
+      let tableBody = '';
+      let allResults = [];
+
+      for (let i = 0; i < Math.pow(2, variables.length); i++) {
+        const variableValues = getVariableValues(i, variables.length);
+        const result = evaluateExpression(expression, variables, variableValues);
+        allResults.push(result);
+        tableBody += '<tr><td>' + variableValues.join('</td><td>') + '</td><td>' + result + '</td></tr>';
+      }
+
+      const truthTable = '<table border="1">' + tableHeader + tableBody + '</table>';
+      document.getElementById('truthTable').innerHTML = truthTable;
+
+      const evaluation = evaluateResults(allResults);
+      document.getElementById('evaluationResult').innerHTML = evaluation;
+    }
+
+    function getVariables(expression) {
+      const regex = /[A-Za-z]/g;
+      const matches = expression.match(regex);
+      return [...new Set(matches)];
+    }
+
+    function getVariableValues(decimal, length) {
+      const binary = decimal.toString(2).padStart(length, '0');
+      return binary.split('').map(bit => bit === '1' ? 'V' : 'F');
+    }
+
+    function evaluateExpression(expression, variables, variableValues) {
+      const replacedExpression = replaceVariables(expression, variables, variableValues);
+      const formattedExpression = substituirCondicao(replacedExpression);
+      const result = eval(formattedExpression);
+      return result ? 'V' : 'F';
+    }
+
+
+    function replaceVariables(expression, variables, variableValues) {
+      let replacedExpression = expression;
+      variables.forEach((variable, index) => {
+        const regex = new RegExp(variable, 'g');
+        replacedExpression = replacedExpression.replace(regex, variableValues[index] === 'V');
+      });
+      return replacedExpression;
+    }
+
+    function substituirCondicao(expressao) {
+    expressao = expressao.replace(/(\w+)\s*>\s*(\w+)/g, function (match, variavel1, variavel2) {
+      return '(!' + variavel1 + ' || ' + variavel2 + ')';
+    });
+    expressao = expressao.replace(/(\w+)\s*<>\s*(\w+)/g, function (match, variavel1, variavel2) {
+      return '(' + variavel1 + ' === ' + variavel2 + ')' + ' && ' + '(' + variavel1 + ' === ' + variavel2 + ')';
+    });
+
+    return expressao;
+  }
+
+    function evaluateResults(results) {
+      if (results.every(result => result === 'V')) {
+        return 'A expressão é uma tautologia.';
+      } else if (results.every(result => result === 'F')) {
+        return 'A expressão é uma contradição.';
+      } else {
+        return 'A expressão é uma contingência.';
+      }
+    }
+  </script>
+  <button class="button" onclick="navMainPage()">Voltar</button>
+</body>
+
+</html>
