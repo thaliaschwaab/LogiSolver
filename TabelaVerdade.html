@@ -19,6 +19,13 @@
 
 <body>
   <h2>Gerador de Tabela Verdade</h2>
+  <div>Para utilizar o gerador, utilize os seguintes caracteres:</div>
+  <div>Negação: !</div>
+  <div>Conjunção: &&</div>
+  <div>Disjunção: ||</div>
+  <div>Implicação: ></div>
+  <div>Bicondicional: <></div>
+  <div>Por exemplo: (A || B) <> (C && D)</div>
   <label for="expression">Expressão Lógica:</label>
   <input type="text" id="expression" placeholder="Digite a expressão lógica">
   <button class="button" onclick="generateTruthTable()">Gerar Tabela Verdade</button>
@@ -92,11 +99,11 @@
 
     function evaluateResults(results) {
       if (results.every(result => result === 'V')) {
-        return 'A expressão é uma tautologia.';
+        return 'A expressão é uma tautologia, já que toda a coluna de resultado retorna verdadeiro. Isso significa que a proposição é sempre verdadeira, independente dos valores ou variáveis envolvidas.';
       } else if (results.every(result => result === 'F')) {
-        return 'A expressão é uma contradição.';
+        return 'A expressão é uma contradição, já que toda a coluna de resultado retorna falso. Isso significa que a proposição é sempre falsa, independente dos valores ou variáveis envolvidas.';
       } else {
-        return 'A expressão é uma contingência.';
+        return 'A expressão é uma contingência, já que existem resultados verdadeiros e falsos na coluna de resultado. Isso significa que a proposição é verdadeira ou falsa dependendo dos valores e variáveis envolvidas.';
       }
     }
   </script>
