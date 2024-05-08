@@ -6,28 +6,142 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: "Inter", sans-serif;
       margin: 0;
     }
 
     .container {
-      text-align: center;
+      text-align: left;
+      margin: 20em;
+      margin-top: 10em;
+    }
+
+    .buttonContainers {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .button {
-      padding: 10px;
-      margin: 5px;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      font-family: "Inter", sans-serif;
+      font-size: 2em;
+      text-align: left;
+      padding: 5em 1em 1em 1em;
+      border: none;
+      border-radius: 1em;
       cursor: pointer;
       display: block;
-      width: 200px;
+      width: 10em;
+      height: 10em;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .yellow {
+      background-color: #F9D555;
+    }
+
+    .purple {
+      background-color: #A089E4;
+    }
+
+    .pink {
+      background-color: #FD6085;
+    }
+
+    .blue {
+      color: #074785;
+    }
+
+    .black {
+      color: black;
+    }
+
+    .removeBold {
+      font-weight: normal;
+    }
+
+    .alightRight {
+      text-align: right;
+      margin: 0;
+    }
+
+    .header {
+      overflow: hidden;
+      padding: 20px 10px;
+    }
+
+    .header a {
+      float: left;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .header a:hover {
+      color: black;
+      font-weight: bold;
+    }
+
+    .header a::before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+
+    .circle,
+    .content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: 0;
+      left: 0;
+    }
+
+    .outside {
+      position: relative;
+    }
+
+    .image {
+      width: 50%;
+      height: 50%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em;
     }
   </style>
   <script src="controllers/MainPage.js"></script>
@@ -35,15 +149,67 @@
 </head>
 
 <body>
-  <div class="container">
-    <h1>Bem-vindo ao LogiSolver!</h1>
-    <p>Raciocínio Lógico para Programação</p>
-    <button class="button" onClick="navQuestions()">Aprenda sobre Lógica Proposicional</button>
-    <button class="button" onclick="navTruthTable()">Tabela Verdade</button>
-    <button class="button" onclick="navLogicExpression()">Expressões Lógicas</button>
+  <div class="outside">
+
+    <div class="circle">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 525" opacity="0.38">
+        <defs>
+          <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="53" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
+              edgeMode="none" result="blur"></feGaussianBlur>
+          </filter>
+        </defs>
+        <g filter="url(#bbblurry-filter)">
+          <ellipse rx="180" ry="181" cx="177.84520461796467" cy="165.057113487683" fill="#a089e4"></ellipse>
+          <ellipse rx="180" ry="181" cx="664.261830594527" cy="286.883284004571" fill="#7befe5"></ellipse>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content">
+
+      <div class="header">
+        <a href="#default" class="logo blue">LogiSolver</a>
+        <div class="header-right">
+          <a title="Início" class="black" href="#home">Início</a>
+          <a title="Lógica Proposicional" class="black" onClick="navQuestions()"
+            href="#LearnAboutLogicalProposition">Lógica Proposicional</a>
+          <a title="Tabela Verdade" class="black" onclick="navTruthTable()" href="#TruthTable">Tabela Verdade</a>
+          <a title="Expressões Lógicas" class="black" onclick="navLogicExpression()"
+            href="#LogicalConnectivesIdentifier">Expressões Lógicas</a>
+        </div>
+      </div>
+
+      <div>
+        <img class="image" src="images/LOGISOLVER.png">
+      </div>
+
+      <div class="container">
+
+        <h1 class="removeBold blue">Aprenda sobre...</h1>
+
+        <div class="buttonContainers">
+
+          <button class="button yellow" onClick="navQuestions()">
+            Lógica </br> Proposicional
+            <p class="alightRight">→</p>
+          </button>
+          <button class="button purple" onclick="navTruthTable()">
+            Tabela </br> Verdade
+            <p class="alightRight">→</p>
+          </button>
+          <button class="button pink" onclick="navLogicExpression()">
+            Expressões </br> Lógicas
+            <p class="alightRight">→</p>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
   </div>
 </body>
-
-</html>
 
 </html>
