@@ -6,40 +6,257 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grid com 6 Botões</title>
   <style>
-    .button-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 10px;
-      margin: 20px auto;
-      width: 200px;
+    body {
+      font-family: "Inter", sans-serif;
+      margin: 0;
+    }
+    .buttonContainers {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 5em 1em 5em;
     }
 
     .button {
-      padding: 10px;
-      text-align: center;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      font-family: "Inter", sans-serif;
+      font-size: 2em;
+      text-align: left;
+      padding: 1em 1em 1em 1em;
+      border: none;
+      border-radius: 1em;
       cursor: pointer;
-      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+      display: block;
+      width: 15em;
+      height: 5em;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .alightRight {
+      text-align: right;
+      margin: 0;
+    }
+
+    .circle,
+    .content {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin: 0;
+      left: 0;
+    }
+
+    .outside {
+      position: relative;
+    }
+
+    .yellow {
+      background-color: #F9D555;
+    }
+
+    .lightpink {
+      background-color: #F2A8AD;
+    }
+
+    .pink {
+      background-color: #FD6085;
+    }
+
+    .tiffany {
+      background-color: #7DE0D7;
+    }
+
+    .blue {
+      background-color: #58B0F6;
+    }
+
+    .purple {
+      background-color: #9C8BDE;
+    }
+
+    .white {
+      color: #FFFFFF;
+    }
+
+    .bgwhite {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .black {
+      color: black;
+    }
+
+    .textblue {
+      color: #074785;
+    }
+
+    .header {
+      overflow: hidden;
+      padding: 20px 10px;
+    }
+
+    .header a {
+      float: left;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .header a:hover {
+      color: black;
+      font-weight: bold;
+    }
+
+    .header a::before {
+      display: block;
+      content: attr(title);
+      font-weight: bold;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        float: none;
+      }
+    }
+
+    .banner {
+      padding: 1em 1em 1em 1em;
+      border: none;
+      border-radius: 1em;
+      width: 107em;
+      height: auto;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin: 1em 1em 5em 5em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .image {
+      width: 25%;
+      height: 25%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1em;
+      padding-right: 8em;
+    }
+
+    .textbody {
+      font-family: "Inter", sans-serif;
+      font-size: 1em;
+      text-align: left;
+      padding: 1em 1em 1em 5em;
+      width: 50%;
+      font-weight: normal;
+      text-align: justify;
+    }
+
+    .texttitle {
+      font-family: "Inter", sans-serif;
+      font-size: 2em;
+      text-align: left;
+      padding: 1em 1em 0 2.5em;
     }
   </style>
 </head>
 
 <body>
+  <div class="outside">
+    <div class="circle">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 525" opacity="0.38">
+        <defs>
+          <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="53" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
+              edgeMode="none" result="blur"></feGaussianBlur>
+          </filter>
+        </defs>
+        <g filter="url(#bbblurry-filter)">
+          <ellipse rx="180" ry="181" cx="177.84520461796467" cy="165.057113487683" fill="#f9d555"></ellipse>
+          <ellipse rx="180" ry="181" cx="664.261830594527" cy="286.883284004571" fill="#fbb45c"></ellipse>
+        </g>
+      </svg>
+    </div>
 
-  <div class="button-grid">
-    <button class="button" onclick="window.location.href='pages/Proposition.html'">O que são proposiçoes?</button>
-    <button class="button" onclick="window.location.href='pages/CompoundProposition.html'">Proposições
-      compostas</button>
-    <button class="button" onclick="window.location.href='Conteudo.html'">Tipos de Conectivos</button>
-    <button class="button" onclick="window.location.href='Conteudo.html'">Princípios da Lógica Proposicional</button>
-    <button class="button" onclick="window.location.href='Conteudo.html'">Tabela Verdade</button>
-    <button class="button" onclick="window.location.href='Conteudo.html'">Classificação de proposições
-      compostas</button>
-    <button class="button" onclick="window.location.href='../index.html'">Voltar</button>
+    <div class="content">
+      <div class="header">
+        <a onclick="window.location.href='../index.html'" class="logo textblue">LogiSolver</a>
+        <div class="header-right">
+          <a title="Início" class="black" onclick="window.location.href='../index.html'">Início</a>
+          <a title="Lógica Proposicional" class="black" onclick="window.location.href='LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
+          <a title="Tabela Verdade" class="black" onclick="window.location.href='TruthTable.html'">Tabela Verdade</a>
+          <a title="Expressões Lógicas" class="black" onclick="window.location.href='LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
+        </div>
+      </div>
+
+      <div class="banner bgwhite">
+        <div>
+          <h1 class="texttitle textblue">Logica Proposicional</h1>
+          <h1 class="textbody">Bem-vindo(a) à sua jornada de descoberta da lógica proposicional! </br> Nesta página, você encontrará um espaço dedicado para aprender e explorar os fundamentos da lógica proposicional, uma área fascinante e fundamental da filosofia e da matemática. </br>
+
+            A lógica proposicional é a base sobre a qual se assentam muitos sistemas formais de raciocínio. Ela lida com proposições, ou seja, declarações que podem ser verdadeiras ou falsas, e com as relações lógicas entre essas proposições. </br>
+            
+            Ao explorar esta página, você será apresentado(a) aos conceitos essenciais da lógica proposicional, como conectivos lógicos (como "e", "ou" e "não"), tabelas verdade e muito mais.</h1>  
+        </div>
+        <img class="image" src="../images/monstro-1.png">
+      </div>
+
+      <div class="buttonContainers">
+        <button class="button yellow white" onClick="window.location.href='pages/Proposition.html'">
+          Proposiçoes
+          <p class="alightRight">→</p>
+        </button>
+        <button class="button lightpink white" onclick="window.location.href='pages/CompoundProposition.html'">
+          Proposições compostas
+          <p class="alightRight">→</p>
+        </button>
+        <button class="button pink white" onclick="window.location.href='Conteudo.html'">
+          Tipos de Conectivos
+          <p class="alightRight">→</p>
+        </button>
+      </div>
+
+      <div class="buttonContainers">
+        <button class="button tiffany white" onClick="window.location.href='Conteudo.html'">
+          Princípios da Lógica </br> Proposicional
+          <p class="alightRight">→</p>
+        </button>
+        <button class="button blue white" onclick="window.location.href='Conteudo.html'">
+          Tabela Verdade
+          <p class="alightRight">→</p>
+        </button>
+        <button class="button purple white" onclick="window.location.href='Conteudo.html'">
+          Classificação de </br> Proposições Compostas
+          <p class="alightRight">→</p>
+        </button>
+      </div>
+    </div>
   </div>
-
 </body>
 
 </html>
