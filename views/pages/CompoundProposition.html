@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .quiz-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 20px auto;
+    }
+
+    .quiz {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    #question {
+      margin-bottom: 20px;
+    }
+
+    .option {
+      margin: 10px;
+    }
+
+    .button {
+      padding: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+    }
+  </style>
+  <script src="../../controllers/pages/CompoundProposition.js"></script>
+</head>
+
+<body>
+
+  <h1>O que são proposições compostas?</h1>
+  <div>Proposições compostas são construídas a partir de proposições simples através da combinação delas usando
+    operadores lógicos. Os operadores lógicos mais comuns são:</div>
+  <div>Conjunção (E): Representada pelo símbolo "∧" ou pela palavra "e". Ela une duas proposições simples e é
+    verdadeira apenas quando ambas as proposições simples são verdadeiras.</div>
+  <div>Disjunção (OU): Representada pelo símbolo "∨" ou pela palavra "ou". Ela une duas proposições simples e é
+    verdadeira quando pelo menos uma das proposições simples é verdadeira.</div>
+  <div>Negação (NÃO): Representada pelo símbolo "¬" ou pelas palavras "não" ou "não é o caso que". Ela nega uma
+    proposição simples, ou seja, se a proposição simples é verdadeira, a negação é falsa, e vice-versa.</div>
+  <div>Condicional (Se... então...): Representado pela seta "→" ou pela palavra "se... então...". Ela estabelece uma
+    relação entre duas proposições, onde a segunda proposição é verdadeira se a primeira for verdadeira.</div>
+  <div>Bicondicional (Se e somente se): Representado por "↔" ou pela frase "se e somente se". Indica que duas
+    proposições são ambas verdadeiras ou ambas falsas.</div>
+  <div>Exemplos de proposições compostas incluem:</div>
+  <div>"Se está chovendo, então as ruas estão molhadas."</div>
+  <div>"O número é par e é maior que 10."</div>
+
+  <h1>Agora, responda o quiz abaixo para verificar seus conhecimentos!</h1>
+  <div class="quiz-container">
+    <div class="quiz">
+      <h2>Quiz 1</h2>
+      <div id="question1">"João não veio à festa ou Maria chegou atrasada." é uma proposição composta?</div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('Veradeiro', 'result1')">É uma proposição composta</button>
+      </div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('Falso', 'result1')">Não é uma proposição composta</button>
+      </div>
+      <div id="result1"></div>
+    </div>
+
+    <div class="quiz">
+      <h2>Quiz 2</h2>
+      <div id="question2">"Se hoje é sábado, então amanhã é domingo." é uma proposição composta?</div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('V', 'result2')">É uma proposição composta</button>
+      </div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('F', 'result2')">Não é uma proposição composta</button>
+      </div>
+      <div id="result2"></div>
+    </div>
+
+    <div class="quiz">
+      <h2>Quiz 3</h2>
+      <div id="question3">"2 + 2 = 4." é uma proposição composta?</div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('True', 'result3')">É uma proposição composta</button>
+      </div>
+      <div class="option">
+        <button class="button" onclick="checkAnswer('False', 'result3')">Não é uma proposição composta</button>
+      </div>
+      <div id="result3"></div>
+    </div>
+    <button class="button" onclick="window.location.href='../LearnAboutLogicalProposition.html'">Voltar</button>
+  </div>
+</body>
+
+</html>

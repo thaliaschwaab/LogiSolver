@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      .container {
-        text-align: center;
-      }
-      .button {
-        padding: 10px;
-        margin: 5px;
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        cursor: pointer;
-        display: block;
-        width: 200px;
-      }
-    </style>
-    <script src="Logisolver.js"></script>
-    <title>Página Inicial</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Bem-vindo ao LogiSolver!</h1>
-      <p>Raciocínio Lógico para Programação</p>
-      <button class="button" onClick="navQuestions()">Aprenda sobre Lógica Proposicional</button>
-      <button class="button" onclick="navTruthTable()">Tabela Verdade</button>
-      <button class="button" onclick="navLogicExpression()">Expressões Lógicas</button>
-    </div>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .button {
+      padding: 10px;
+      margin: 5px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      width: 200px;
+    }
+  </style>
+  <script src="controllers/MainPage.js"></script>
+  <title>Página Inicial</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Bem-vindo ao LogiSolver!</h1>
+    <p>Raciocínio Lógico para Programação</p>
+    <button class="button" onClick="navQuestions()">Aprenda sobre Lógica Proposicional</button>
+    <button class="button" onclick="navTruthTable()">Tabela Verdade</button>
+    <button class="button" onclick="navLogicExpression()">Expressões Lógicas</button>
+  </div>
+</body>
+
 </html>
 
 </html>

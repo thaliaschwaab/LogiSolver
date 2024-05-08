@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabela Verdade</title>
+  <style>
+    .button {
+      padding: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+    }
+  </style>
+  <script src="../controllers/TruthTable.js"></script>
+</head>
+
+<body>
+  <h2>Gerador de Tabela Verdade</h2>
+  <div>Para utilizar o gerador, utilize os seguintes caracteres:</div>
+  <div>Negação: !</div>
+  <div>Conjunção: &&</div>
+  <div>Disjunção: ||</div>
+  <div>Implicação: ></div>
+  <div>Bicondicional: <>
+  </div>
+  <div>Por exemplo: (A || B) <> (C && D)</div>
+  <label for="expression">Expressão Lógica:</label>
+  <input type="text" id="expression" placeholder="Digite a expressão lógica">
+  <button class="button" onclick="generateTruthTable()">Gerar Tabela Verdade</button>
+  <div id="truthTable"></div>
+  <div id="evaluationResult"></div>
+  <button class="button" onclick="navMainPage()">Voltar</button>
+</body>
+
+</html>

@@ -32,14 +32,16 @@
     }
 
     .button {
-        padding: 10px;
-        text-align: center;
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        cursor: pointer; /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
-      }
+      padding: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+    }
   </style>
+  <script src="../../controllers/pages/Proposition.js"></script>
 </head>
 
 <body>
@@ -95,19 +97,8 @@
       </div>
       <div id="result3"></div>
     </div>
-    <button class="button" onclick="window.location.href='Conteudo.html'">Voltar</button>
+    <button class="button" onclick="window.location.href='../LearnAboutLogicalProposition.html'">Voltar</button>
   </div>
-
-  <script>
-    function checkAnswer(answer, resultId) {
-      if (answer === 'Veradeiro' || answer === 'F' || answer === 'True') {
-        document.getElementById(resultId).innerText = 'Você acertou!';
-      } else {
-        document.getElementById(resultId).innerText = 'Você errou, tente novamente.';
-      }
-    }
-  </script>
-
 </body>
 
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identificação de Conectivos Lógicos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .button {
+      padding: 10px;
+      text-align: center;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+    }
+  </style>
+  <script src="../controllers/LogicalConnectivesIdentifier.js"></script>
+</head>
+
+<body>
+
+  <h2>Identificação de Conectivos Lógicos</h2>
+  <div>São consideradas frases de proposição composta aquelas que contêm os seguintes conectivos:</div>
+  <div>Negação: não, não é o caso que, não é verdade que</div>
+  <div>Conjunção: e, também, além de</div>
+  <div>Disjunção: ou, mas</div>
+  <div>Implicação: apenas se, se, então</div>
+  <div>Bicondicional: se e somente se</div>
+  <p>Insira uma proposição composta:</p>
+  <input type="text" id="proposicao">
+  <button class="button" onclick="identificarConectivos()">Identificar Conectivos</button>
+  <p id="resultado"></p>
+  <button class="button" onclick="window.location.href='../index.html'">Voltar</button>
+
+</body>
+
+</html>
