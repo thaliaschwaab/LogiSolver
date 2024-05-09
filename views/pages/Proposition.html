@@ -37,14 +37,12 @@
       border-radius: 5px;
       cursor: pointer;
       width: 15em;
-      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
     }
 
     .answer {
       margin: 10px;
     }
 
-    /* Style the button that is used to open and close the collapsible content */
     .collapsible {
       background-color: white;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
@@ -60,13 +58,11 @@
       font-weight: bold;
     }
 
-    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active,
     .collapsible:hover {
       background-color: white;
     }
 
-    /* Style the collapsible content. Note: hidden by default */
     .expand {
       padding: 0 18px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
@@ -80,6 +76,17 @@
     .size {
       width: 112rem;
       margin: 5em;
+    }
+
+    .exampleDiv {
+      font-family: "Inter", sans-serif;
+      font-size: 0.7rem;
+      text-align: left;
+      padding: 1rem 1rem 0 8rem;
+    }
+
+    .removeBold {
+      font-weight: normal;
     }
   </style>
   <script src="../../controllers/pages/Proposition.js"></script>
@@ -120,25 +127,35 @@
       <div class="banner bgwhite">
         <div>
           <h1 class="bannerTitle blue">Proposições</h1>
-          <h1 class="bannerBodyText">Proposições são declarações afirmativas ou negativas que podem ser consideradas
-            verdadeiras ou falsas. Em </br>
-            lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido. Elas
+          <h1 class="bannerBodyText">
+            Proposições são declarações afirmativas ou negativas que podem ser consideradas verdadeiras ou falsas. </br>
+            Em lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido.
             </br>
-            podem ser simples, como "2 é um número par", ou compostas, como "Se chove, então as ruas ficam molhadas".
-            Por </br>
-            enquanto, vamos analisar as proposições simples.</br>
-            Proposições simples são declarações que expressam uma ideia única e podem ser avaliadas como verdadeiras
-            ou</br>
-            falsas de forma independente. Elas não contêm proposições subordinadas ou conectadas por operadores lógicos.
+            Elas podem ser simples, como "2 é um número par", ou compostas, como "Se chove, então as ruas ficam
+            molhadas". </br>
+            Por enquanto, vamos analisar as proposições simples. </br>
+            Proposições simples são declarações que expressam uma ideia única e podem ser avaliadas como verdadeiras ou
+            falsas de forma independente. </br>
+            Elas não contêm proposições subordinadas ou conectadas por operadores lógicos.
           </h1>
         </div>
         <img class="bannerImage" src="../../images/propositions.png">
       </div>
 
+      <div class="exampleDiv">
+        <h1 class="removeBold">Exemplos de proposições simples incluem:</h1>
+        <h1 class="blue">
+          • O céu é azul. </br>
+          • 2 + 2 = 4. </br>
+          • A lua é um satélite natural da Terra. </br>
+          • Brasil ganhou a Copa do Mundo de 2002. </br>
+          • 1 é menor que 5.
+        </h1>
+      </div>
+
       <div class="size">
         <button class="collapsible">▼ Teste seu conhecimento</button>
         <div class="expand">
-          <!-- <p>Lorem ipsum...</p> -->
           <div class="quiz-container">
             <ol>
               <div class="quiz">
@@ -199,7 +216,7 @@
       </div>
 
       <div class="buttonsContainer">
-        <button class="navButton bgyellow white" onClick="window.location.href='pages/Proposition.html'">
+        <button class="navButton bgyellow white" onClick="window.location.href='Proposition.html'">
           Proposições
           <p class="alightRight">→</p>
         </button>
