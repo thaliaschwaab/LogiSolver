@@ -1,5 +1,5 @@
 function navTruthTable() {
-  window.location.href = "views/TruthTable.html";
+  window.location.href = "views/TruthTableGenerator.html";
 }
 
 function navQuestions() {
