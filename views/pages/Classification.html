@@ -8,13 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <title>Proposições</title>
+  <title>Tabela Verdade</title>
   <style>
     .removeBold {
       font-weight: normal;
     }
   </style>
-  <script src="../../controllers/pages/Proposition.js"></script>
+  <script src="../../controllers/pages/Classification.js"></script>
 </head>
 
 <body>
@@ -51,30 +51,27 @@
 
       <div class="banner bgwhite">
         <div>
-          <h1 class="bannerTitle blue">Proposições</h1>
+          <h1 class="bannerTitle blue">Classificação de Proposições Compostas</h1>
           <h1 class="bannerBodyText">
-            Proposições são declarações afirmativas ou negativas que podem ser consideradas verdadeiras ou falsas. </br>
-            Em lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido.
-            </br>
-            Elas podem ser simples, como "2 é um número par", ou compostas, como "Se chove, então as ruas ficam
-            molhadas". </br>
-            Por enquanto, vamos analisar as proposições simples. </br>
-            Proposições simples são declarações que expressam uma ideia única e podem ser avaliadas como verdadeiras ou
-            falsas de forma independente. </br>
-            Elas não contêm proposições subordinadas ou conectadas por operadores lógicos.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae varius ligula. Class aptent taciti </br>
+            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque elementum turpis sit amet </br>
+            tellus maximus, in congue erat pulvinar. Maecenas vitae leo mauris. Mauris convallis purus eu nisl faucibus </br>
+            elementum. Curabitur faucibus ultrices erat at finibus. Nulla sit amet augue at arcu tempus elementum eget </br>
+            at nunc. Praesent luctus quam et erat eleifend fringilla. Cras sit amet pulvinar nulla. Praesent ac cursus </br>
+            orci, congue
           </h1>
         </div>
-        <img class="bannerImage" src="../../images/propositions.png">
+        <img class="bannerImage" src="../../images/classification.png">
       </div>
 
       <div class="exampleDiv">
-        <h1 class="removeBold">Exemplos de proposições simples incluem:</h1>
+        <h1 class="removeBold">Exemplos incluem:</h1>
         <h1 class="blue">
-          • O céu é azul. </br>
-          • 2 + 2 = 4. </br>
-          • A lua é um satélite natural da Terra. </br>
-          • Brasil ganhou a Copa do Mundo de 2002. </br>
-          • 1 é menor que 5.
+          • Exemplo. </br>
+          • Exemplo. </br>
+          • Exemplo. </br>
+          • Exemplo. </br>
+          • Exemplo.
         </h1>
       </div>
 
@@ -84,7 +81,7 @@
           <div class="quiz-container">
             <ol>
               <div class="quiz">
-                <li><strong>"O sol é uma estrela."</strong> é uma preposição?</li>
+                <li><strong>"afirmação."</strong> correta?</li>
                 <div>
                   <div class="option">
                     <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Sim</button>
@@ -97,7 +94,7 @@
               </div>
 
               <div class="quiz">
-                <li><strong>"Pegue aquele livro para mim."</strong> é uma preposição?</li>
+                <li><strong>"afirmação."</strong> correta??</li>
                 <div>
                   <div class="option">
                     <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Sim</button>
@@ -110,7 +107,7 @@
               </div>
 
               <div class="quiz">
-                <li><strong>"7 é um número primo."</strong> é uma preposição?</li>
+                <li><strong>"afirmação."</strong> correta??</li>
                 <div>
                   <div class="teste">
                     <div class="option">
@@ -161,20 +158,21 @@
   </div>
 </body>
 
-  <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-  </script>
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
+
 </html>
