@@ -131,20 +131,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 5em 1em 5em;
+  padding: 1rem 5rem 1rem 5rem;
 }
 
 .navButton {
   font-family: "Inter", sans-serif;
-  font-size: 2em;
+  font-size: 1.5rem;
   text-align: left;
-  padding: 1em 1em 1em 1em;
+  padding: 1rem 1rem 1rem 1rem;
   border: none;
-  border-radius: 1em;
+  border-radius: 1rem;
   cursor: pointer;
   display: block;
-  width: 15em;
-  height: 5em;
+  width: 25rem;
+  height: 8rem;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   align-items: center;
@@ -152,13 +152,13 @@ body {
 }
 
 .banner {
-  padding: 1em 1em 1em 1em;
+  padding: 1rem 1rem 1rem 1rem;
   border: none;
-  border-radius: 1em;
+  border-radius: 1rem;
   width: 107rem;
   height: auto;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 1em 1em 5em 5em;
+  margin: 1rem 1rem 5rem 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,15 +170,15 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1em;
-  padding-right: 8em;
+  margin-top: 1rem;
+  padding-right: 8rem;
 }
 
 .bannerBodyText {
   font-family: "Inter", sans-serif;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   text-align: left;
-  padding: 1em 1em 1em 4em;
+  padding: 1rem 1rem 1rem 4rem;
   width: 50%;
   font-weight: normal;
   text-align: justify;
@@ -186,7 +186,7 @@ body {
 
 .bannerTitle {
   font-family: "Inter", sans-serif;
-  font-size: 2em;
+  font-size: 2rem;
   text-align: left;
-  padding: 1em 1em 0 2.5em;
+  padding: 1rem 1rem 0 2.5rem;
 }
