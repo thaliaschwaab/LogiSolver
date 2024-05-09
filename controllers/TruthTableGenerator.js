@@ -16,7 +16,7 @@ function generateTruthTable() {
     tableBody += '<tr><td>' + variableValues.join('</td><td>') + '</td><td>' + result + '</td></tr>';
   }
 
-  const truthTable = '<table border="1">' + tableHeader + tableBody + '</table>';
+  const truthTable = '<table>' + tableHeader + tableBody + '</table>';
   document.getElementById('truthTable').innerHTML = truthTable;
 
   const evaluation = evaluateResults(allResults);

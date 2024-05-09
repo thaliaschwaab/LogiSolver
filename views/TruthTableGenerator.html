@@ -4,37 +4,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tabela Verdade</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title>Gerador de Tabela Verdade</title>
   <style>
-    .button {
-      padding: 10px;
-      text-align: center;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+    .texttitlediv {
+      font-family: "Inter", sans-serif;
+      font-size: 2rem;
+      text-align: left;
+      padding: 3rem 1rem 0 8rem;
+    }
+
+    input {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-image: linear-gradient(to right, #e6e6e6, #f3f3f3);
+      margin-left: 5rem;
+      padding: 1.5rem 1rem 1.5rem 1.5rem;
+      width: 107rem;
+    }
+
+    ::placeholder {
+      font-style: italic;
+    }
+
+    .generateButton {
+      background-color: #29aefd;
+      font-family: "Inter", sans-serif;
+      font-size: 1.2rem;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 1rem 4rem 1rem 4rem;
+      margin-top: 1rem;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       cursor: pointer;
-      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+      margin-right: 4rem;
+      float: right;
+    }
+
+    th {
+      background-image: linear-gradient(to right, #7befe5, #29aefd);
+      color: white;
+      padding: 0.5rem 5rem 0.5rem 5rem;
+    }
+
+    table {
+      background-color: white;
+      border-radius: 0.5rem;
+      position: relative;
+      left: 30%;
+      margin-top: 1rem;
+    }
+
+    tr {
+      text-align: center;
+      padding-bottom: 1em
+    }
+
+    .divtable {
+      position: relative;
+      left: 30%;
+    }
+
+    td {
+      padding-top: .5em;
+      padding-bottom: .5em;
+    }
+
+    .speech {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 1rem;
+      background: white;
+      width: 95rem;
+      height: auto;
+      margin-left: 5rem;
+      margin-top: 3rem;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .speech:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 43px solid transparent;
+      border-right-color: #ffffff;
+      border-left: 0;
+      border-top: 0;
+      margin-top: -21.5px;
+      margin-left: -43px;
+    }
+
+    .speechText {
+      margin-left: 2rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .italic {
+      font-style: italic;
+      color: grey;
+      margin-left: 2rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    .monsterimg {
+      width: auto;
+      height: 10rem;
+      margin-top: 3rem;
+      margin-left: 5rem;
+    }
+
+    .speechdiv {
+      display: inline-flex;
+      align-items: center;
     }
   </style>
   <script src="../controllers/TruthTableGenerator.js"></script>
 </head>
 
 <body>
-  <h2>Gerador de Tabela Verdade</h2>
-  <div>Para utilizar o gerador, utilize os seguintes caracteres:</div>
-  <div>Negação: !</div>
-  <div>Conjunção: &&</div>
-  <div>Disjunção: ||</div>
-  <div>Implicação: ></div>
-  <div>Bicondicional: <>
-  </div>
-  <div>Por exemplo: (A || B) <> (C && D)</div>
-  <label for="expression">Expressão Lógica:</label>
-  <input type="text" id="expression" placeholder="Digite a expressão lógica">
-  <button class="button" onclick="generateTruthTable()">Gerar Tabela Verdade</button>
-  <div id="truthTable"></div>
-  <div id="evaluationResult"></div>
-  <button class="button" onclick="navMainPage()">Voltar</button>
+  <div class="outside">
+    <div class="circle">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 525" opacity="0.38">
+        <defs>
+          <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="53" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
+              edgeMode="none" result="blur"></feGaussianBlur>
+          </filter>
+        </defs>
+        <g filter="url(#bbblurry-filter)">
+          <ellipse rx="180" ry="181" cx="177.84520461796467" cy="165.057113487683" fill="#f9d555"></ellipse>
+          <ellipse rx="180" ry="181" cx="664.261830594527" cy="286.883284004571" fill="#fbb45c"></ellipse>
+        </g>
+      </svg>
+    </div>
+
+    <div class="content">
+      <div class="header">
+        <a onclick="window.location.href='../index.html'" class="logo blue">LogiSolver</a>
+        <div class="header-right">
+          <a title="Início" class="black" onclick="window.location.href='../index.html'">Início</a>
+          <a title="Lógica Proposicional" class="black"
+            onclick="window.location.href='LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
+          <a title="Tabela Verdade" class="black" onclick="window.location.href='TruthTableGenerator.html'">Tabela
+            Verdade</a>
+          <a title="Expressões Lógicas" class="black"
+            onclick="window.location.href='LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
+        </div>
+      </div>
+
+      <div class="banner bgwhite">
+        <div>
+          <h1 class="bannerTitle blue">Tabela Verdade</h1>
+          <h1 class="bannerBodyText">
+            Este gerador é capaz de receber uma expressão lógica e retornar a sua respectiva tabela verdade. </br> </br>
+            Os seguintes caracteres são aceitos pelo gerador: </br>
+          </h1>
+          <h1 class="bannerTitle blue" style="font-size: 1.2rem;">
+            • Negação: ! </br>
+            • Conjunção: && </br>
+            • Disjunção: || </br>
+            • Implicação: > </br>
+            • Bicondicional: <> </br>
+          </h1>
+        </div>
+        <img class="bannerImage" src="../images/truthTable.png">
+      </div>
+
+      <div>
+        <h1 class="texttitlediv blue">Gerador de Tabela Verdade:</h1>
+        <input placeholder="Insira uma expressão lógica. Exemplo: (A <> B) || (C && D)" type="text" id="expression">
+        <button class="generateButton" onclick="generateTruthTable()">Gerar</button>
+
+      </div>
+      <div class="speechdiv">
+        <img class="monsterimg" src="../images/monsterTruthTable.png">
+        <div class="speech">
+          <p class="italic">A tabela verdade da proposição inserida é:</p>
+          <div id="truthTable"></div>
+          <p class="speechText blue" id="evaluationResult">Digite uma expressão para gerar a tabela!</p>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>
