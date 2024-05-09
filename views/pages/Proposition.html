@@ -4,101 +4,248 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title>Proposições</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    .quiz-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin: 20px auto;
-    }
-
     .quiz {
-      border: 1px solid #ccc;
       padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
     }
 
     #question {
       margin-bottom: 20px;
     }
 
-    .option {
+    .option,
+    li {
+      float: left;
+      text-align: center;
       margin: 10px;
     }
 
-    .button {
+    .buttonC {
+      border: none;
       padding: 10px;
       text-align: center;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
+      color: white;
       border-radius: 5px;
       cursor: pointer;
+      width: 15em;
       /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+    }
+
+    .answer {
+      margin: 10px;
+    }
+
+    /* Style the button that is used to open and close the collapsible content */
+    .collapsible {
+      background-color: white;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 0.5em;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 97.5%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active,
+    .collapsible:hover {
+      background-color: white;
+    }
+
+    /* Style the collapsible content. Note: hidden by default */
+    .expand {
+      padding: 0 18px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 0.5em;
+      display: none;
+      overflow: hidden;
+      background-color: white;
+      width: 95.5%;
+    }
+
+    .size {
+      width: 112rem;
+      margin: 5em;
     }
   </style>
   <script src="../../controllers/pages/Proposition.js"></script>
 </head>
 
 <body>
-
-  <h1>O que são proposições?</h1>
-  <div>Proposições são declarações afirmativas ou negativas que podem ser consideradas verdadeiras ou falsas. Em
-    lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido. Elas
-    podem ser simples, como "2 é um número par", ou compostas, como "Se chove, então as ruas ficam molhadas". Por
-    enquanto, vamos analisar as proposições simples.</div>
-  <div>Proposições simples são declarações que expressam uma ideia única e podem ser avaliadas como verdadeiras ou
-    falsas de forma independente. Elas não contêm proposições subordinadas ou conectadas por operadores lógicos.</div>
-  <div>Exemplos de proposições simples incluem:</div>
-  <div>"O céu é azul."</div>
-  <div>"2 + 2 = 4."</div>
-  <div>"A lua é um satélite natural da Terra."</div>
-  <div>"Brasil ganhou a Copa do Mundo de 2002."</div>
-  <div>"1 é menor que 5."</div>
-
-  <h1>Agora, responda o quiz abaixo para verificar seus conhecimentos!</h1>
-  <div class="quiz-container">
-    <div class="quiz">
-      <h2>Quiz 1</h2>
-      <div id="question1">"O sol é uma estrela." é uma proposição?</div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('Veradeiro', 'result1')">É uma proposição</button>
-      </div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('Falso', 'result1')">Não é uma proposição</button>
-      </div>
-      <div id="result1"></div>
+  <div class="outside">
+    <div class="circle">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 525" opacity="0.38">
+        <defs>
+          <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="53" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
+              edgeMode="none" result="blur"></feGaussianBlur>
+          </filter>
+        </defs>
+        <g filter="url(#bbblurry-filter)">
+          <ellipse rx="180" ry="181" cx="177.84520461796467" cy="165.057113487683" fill="#f9d555"></ellipse>
+          <ellipse rx="180" ry="181" cx="664.261830594527" cy="286.883284004571" fill="#fbb45c"></ellipse>
+        </g>
+      </svg>
     </div>
 
-    <div class="quiz">
-      <h2>Quiz 2</h2>
-      <div id="question2">"Pegue aquele livro para mim." é uma proposição?</div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('V', 'result2')">É uma proposição</button>
+    <div class="content">
+      <div class="header">
+        <a onclick="window.location.href='../../index.html'" class="logo blue">LogiSolver</a>
+        <div class="header-right">
+          <a title="Início" class="black" onclick="window.location.href='../../index.html'">Início</a>
+          <a title="Lógica Proposicional" class="black"
+            onclick="window.location.href='../LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
+          <a title="Tabela Verdade" class="black" onclick="window.location.href='../TruthTable.html'">Tabela Verdade</a>
+          <a title="Expressões Lógicas" class="black"
+            onclick="window.location.href='../LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
+        </div>
       </div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('F', 'result2')">Não é uma proposição</button>
-      </div>
-      <div id="result2"></div>
-    </div>
 
-    <div class="quiz">
-      <h2>Quiz 3</h2>
-      <div id="question3">"7 é um número primo." é uma proposição?</div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('True', 'result3')">É uma proposição</button>
+      <div class="banner bgwhite">
+        <div>
+          <h1 class="bannerTitle blue">Proposições</h1>
+          <h1 class="bannerBodyText">Proposições são declarações afirmativas ou negativas que podem ser consideradas
+            verdadeiras ou falsas. Em </br>
+            lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido. Elas
+            </br>
+            podem ser simples, como "2 é um número par", ou compostas, como "Se chove, então as ruas ficam molhadas".
+            Por </br>
+            enquanto, vamos analisar as proposições simples.</br>
+            Proposições simples são declarações que expressam uma ideia única e podem ser avaliadas como verdadeiras
+            ou</br>
+            falsas de forma independente. Elas não contêm proposições subordinadas ou conectadas por operadores lógicos.
+          </h1>
+        </div>
+        <img class="bannerImage" src="../../images/propositions.png">
       </div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('False', 'result3')">Não é uma proposição</button>
+
+      <div class="size">
+        <button class="collapsible">▼ Teste seu conhecimento</button>
+        <div class="expand">
+          <!-- <p>Lorem ipsum...</p> -->
+          <div class="quiz-container">
+            <ol>
+              <div class="quiz">
+
+
+                <li><strong>"O sol é uma estrela."</strong> é uma preposição?</li>
+
+                <div>
+
+                  <div class="option">
+                    <button class="buttonC bggreen" onclick="checkAnswer('Veradeiro', 'result1')">Sim</button>
+                  </div>
+                  <div class="option">
+                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Não</button>
+                  </div>
+                  <div class="answer" id="result1"></div>
+                </div>
+
+              </div>
+
+
+              <div class="quiz">
+                <li><strong>"Pegue aquele livro para mim."</strong> é uma preposição?</li>
+                <div>
+                  <div class="option">
+                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Sim</button>
+                  </div>
+                  <div class="option">
+                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Não</button>
+                  </div>
+                  <div class="answer" id="result2"></div>
+                </div>
+              </div>
+
+              <div class="quiz">
+                <li><strong>"7 é um número primo."</strong> é uma preposição?</li>
+
+                <div>
+
+                  <div class="teste">
+
+                    <div class="option">
+                      <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
+                    </div>
+                    <div class="option">
+                      <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
+                    </div>
+
+                    <div class="answer" id="result3"></div>
+                  </div>
+
+                </div>
+              </div>
+
+          </div>
+          </ol>
+        </div>
       </div>
-      <div id="result3"></div>
+
+      <div class="buttonsContainer">
+        <button class="navButton bgyellow white" onClick="window.location.href='pages/Proposition.html'">
+          Proposições
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bglightpink white" onclick="window.location.href='pages/CompoundProposition.html'">
+          Proposições compostas
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bgpink white" onclick="window.location.href='Conteudo.html'">
+          Tipos de Conectivos
+          <p class="alightRight">→</p>
+        </button>
+      </div>
+
+      <div class="buttonsContainer">
+        <button class="navButton bgtiffany white" onClick="window.location.href='Conteudo.html'">
+          Princípios da Lógica </br> Proposicional
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bgblue white" onclick="window.location.href='Conteudo.html'">
+          Tabela Verdade
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bgpurple white" onclick="window.location.href='Conteudo.html'">
+          Classificação de </br> Proposições Compostas
+          <p class="alightRight">→</p>
+        </button>
+      </div>
     </div>
-    <button class="button" onclick="window.location.href='../LearnAboutLogicalProposition.html'">Voltar</button>
   </div>
+
 </body>
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
 
 </html>

@@ -9,71 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <title>Lógica Proposicional</title>
-  <style>
-    .buttonContainers {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1em 5em 1em 5em;
-    }
-
-    .button {
-      font-family: "Inter", sans-serif;
-      font-size: 2em;
-      text-align: left;
-      padding: 1em 1em 1em 1em;
-      border: none;
-      border-radius: 1em;
-      cursor: pointer;
-      display: block;
-      width: 15em;
-      height: 5em;
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .banner {
-      padding: 1em 1em 1em 1em;
-      border: none;
-      border-radius: 1em;
-      width: 107em;
-      height: auto;
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      margin: 1em 1em 5em 5em;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .image {
-      width: 25%;
-      height: 25%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1em;
-      padding-right: 8em;
-    }
-
-    .textbody {
-      font-family: "Inter", sans-serif;
-      font-size: 1.2em;
-      text-align: left;
-      padding: 1em 1em 1em 4em;
-      width: 50%;
-      font-weight: normal;
-      text-align: justify;
-    }
-
-    .texttitle {
-      font-family: "Inter", sans-serif;
-      font-size: 2em;
-      text-align: left;
-      padding: 1em 1em 0 2.5em;
-    }
-  </style>
 </head>
 
 <body>
@@ -100,49 +35,56 @@
         <a onclick="window.location.href='../index.html'" class="logo blue">LogiSolver</a>
         <div class="header-right">
           <a title="Início" class="black" onclick="window.location.href='../index.html'">Início</a>
-          <a title="Lógica Proposicional" class="black" onclick="window.location.href='LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
+          <a title="Lógica Proposicional" class="black"
+            onclick="window.location.href='LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
           <a title="Tabela Verdade" class="black" onclick="window.location.href='TruthTable.html'">Tabela Verdade</a>
-          <a title="Expressões Lógicas" class="black" onclick="window.location.href='LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
+          <a title="Expressões Lógicas" class="black"
+            onclick="window.location.href='LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
         </div>
       </div>
 
       <div class="banner bgwhite">
         <div>
-          <h1 class="texttitle blue">Lógica Proposicional</h1>
-          <h1 class="textbody">Bem-vindo(a) à sua jornada de descoberta da lógica proposicional! </br> Nesta página, você encontrará um espaço dedicado para aprender e explorar os fundamentos da lógica proposicional, uma área fascinante e fundamental da filosofia e da matemática. </br>
+          <h1 class="bannerTitle blue">Lógica Proposicional</h1>
+          <h1 class="bannerBodyText">Bem-vindo(a) à sua jornada de descoberta da lógica proposicional! </br> Nesta página,
+            você encontrará um espaço dedicado para aprender e explorar os fundamentos da lógica proposicional, uma área
+            fascinante e fundamental da filosofia e da matemática. </br>
 
-            A lógica proposicional é a base sobre a qual se assentam muitos sistemas formais de raciocínio. Ela lida com proposições, ou seja, declarações que podem ser verdadeiras ou falsas, e com as relações lógicas entre essas proposições. </br>
-            
-            Ao explorar esta página, você será apresentado(a) aos conceitos essenciais da lógica proposicional, como conectivos lógicos (como "e", "ou" e "não"), tabelas verdade e muito mais.</h1>  
+            A lógica proposicional é a base sobre a qual se assentam muitos sistemas formais de raciocínio. Ela lida com
+            proposições, ou seja, declarações que podem ser verdadeiras ou falsas, e com as relações lógicas entre essas
+            proposições. </br>
+
+            Ao explorar esta página, você será apresentado(a) aos conceitos essenciais da lógica proposicional, como
+            conectivos lógicos (como "e", "ou" e "não"), tabelas verdade e muito mais.</h1>
         </div>
-        <img class="image" src="../images/monstro-1.png">
+        <img class="bannerImage" src="../images/logicalProposition.png">
       </div>
 
-      <div class="buttonContainers">
-        <button class="button bgyellow white" onClick="window.location.href='pages/Proposition.html'">
+      <div class="buttonsContainer">
+        <button class="navButton bgyellow white" onClick="window.location.href='pages/Proposition.html'">
           Proposições
           <p class="alightRight">→</p>
         </button>
-        <button class="button bglightpink white" onclick="window.location.href='pages/CompoundProposition.html'">
+        <button class="navButton bglightpink white" onclick="window.location.href='pages/CompoundProposition.html'">
           Proposições compostas
           <p class="alightRight">→</p>
         </button>
-        <button class="button bgpink white" onclick="window.location.href='Conteudo.html'">
+        <button class="navButton bgpink white" onclick="window.location.href='Conteudo.html'">
           Tipos de Conectivos
           <p class="alightRight">→</p>
         </button>
       </div>
 
-      <div class="buttonContainers">
-        <button class="button bgtiffany white" onClick="window.location.href='Conteudo.html'">
+      <div class="buttonsContainer">
+        <button class="navButton bgtiffany white" onClick="window.location.href='Conteudo.html'">
           Princípios da Lógica </br> Proposicional
           <p class="alightRight">→</p>
         </button>
-        <button class="button bgblue white" onclick="window.location.href='Conteudo.html'">
+        <button class="navButton bgblue white" onclick="window.location.href='Conteudo.html'">
           Tabela Verdade
           <p class="alightRight">→</p>
         </button>
-        <button class="button bgpurple white" onclick="window.location.href='Conteudo.html'">
+        <button class="navButton bgpurple white" onclick="window.location.href='Conteudo.html'">
           Classificação de </br> Proposições Compostas
           <p class="alightRight">→</p>
         </button>

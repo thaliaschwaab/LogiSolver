@@ -37,6 +37,11 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+.bggreen {
+  background-color: #89CF7D;
+}
+
+
 /* colors */
 .blue {
   color: #074785;
@@ -64,6 +69,7 @@ body {
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .header a.logo {
@@ -118,4 +124,69 @@ body {
 
 .outside {
   position: relative;
+}
+
+/* learning pages */
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 5em 1em 5em;
+}
+
+.navButton {
+  font-family: "Inter", sans-serif;
+  font-size: 2em;
+  text-align: left;
+  padding: 1em 1em 1em 1em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  display: block;
+  width: 15em;
+  height: 5em;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner {
+  padding: 1em 1em 1em 1em;
+  border: none;
+  border-radius: 1em;
+  width: 107rem;
+  height: auto;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 1em 1em 5em 5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bannerImage {
+  width: 25%;
+  height: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  padding-right: 8em;
+}
+
+.bannerBodyText {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2em;
+  text-align: left;
+  padding: 1em 1em 1em 4em;
+  width: 50%;
+  font-weight: normal;
+  text-align: justify;
+}
+
+.bannerTitle {
+  font-family: "Inter", sans-serif;
+  font-size: 2em;
+  text-align: left;
+  padding: 1em 1em 0 2.5em;
 }

@@ -1,7 +1,11 @@
 function checkAnswer(answer, resultId) {
   if (answer === 'Veradeiro' || answer === 'F' || answer === 'True') {
-    document.getElementById(resultId).innerText = 'Você acertou!';
+    var color = '#89CF7D';
+    document.getElementById(resultId).innerHTML = 'A resposta está <b>correta</b>.';
+    document.getElementById(resultId).style.color = color;
   } else {
-    document.getElementById(resultId).innerText = 'Você errou, tente novamente.';
+    var color = '#E35D79';
+    document.getElementById(resultId).innerHTML = 'A resposta está <b>incorreta</b>.';
+    document.getElementById(resultId).style.color = color;
   }
 }
