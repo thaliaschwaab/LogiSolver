@@ -4,104 +4,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title>Proposições Compostas</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    .quiz-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin: 20px auto;
-    }
-
-    .quiz {
-      border: 1px solid #ccc;
-      padding: 20px;
-    }
-
-    #question {
-      margin-bottom: 20px;
-    }
-
-    .option {
-      margin: 10px;
-    }
-
-    .button {
-      padding: 10px;
-      text-align: center;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      cursor: pointer;
-      /* Adiciona um cursor de ponteiro para indicar que os botões são clicáveis */
+    .removeBold {
+      font-weight: normal;
     }
   </style>
   <script src="../../controllers/pages/CompoundProposition.js"></script>
 </head>
 
 <body>
-
-  <h1>O que são proposições compostas?</h1>
-  <div>Proposições compostas são construídas a partir de proposições simples através da combinação delas usando
-    operadores lógicos. Os operadores lógicos mais comuns são:</div>
-  <div>Conjunção (E): Representada pelo símbolo "∧" ou pela palavra "e". Ela une duas proposições simples e é
-    verdadeira apenas quando ambas as proposições simples são verdadeiras.</div>
-  <div>Disjunção (OU): Representada pelo símbolo "∨" ou pela palavra "ou". Ela une duas proposições simples e é
-    verdadeira quando pelo menos uma das proposições simples é verdadeira.</div>
-  <div>Negação (NÃO): Representada pelo símbolo "¬" ou pelas palavras "não" ou "não é o caso que". Ela nega uma
-    proposição simples, ou seja, se a proposição simples é verdadeira, a negação é falsa, e vice-versa.</div>
-  <div>Condicional (Se... então...): Representado pela seta "→" ou pela palavra "se... então...". Ela estabelece uma
-    relação entre duas proposições, onde a segunda proposição é verdadeira se a primeira for verdadeira.</div>
-  <div>Bicondicional (Se e somente se): Representado por "↔" ou pela frase "se e somente se". Indica que duas
-    proposições são ambas verdadeiras ou ambas falsas.</div>
-  <div>Exemplos de proposições compostas incluem:</div>
-  <div>"Se está chovendo, então as ruas estão molhadas."</div>
-  <div>"O número é par e é maior que 10."</div>
-
-  <h1>Agora, responda o quiz abaixo para verificar seus conhecimentos!</h1>
-  <div class="quiz-container">
-    <div class="quiz">
-      <h2>Quiz 1</h2>
-      <div id="question1">"João não veio à festa ou Maria chegou atrasada." é uma proposição composta?</div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('Veradeiro', 'result1')">É uma proposição composta</button>
-      </div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('Falso', 'result1')">Não é uma proposição composta</button>
-      </div>
-      <div id="result1"></div>
+  <div class="outside">
+    <div class="circle">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 525" opacity="0.38">
+        <defs>
+          <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="53" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
+              edgeMode="none" result="blur"></feGaussianBlur>
+          </filter>
+        </defs>
+        <g filter="url(#bbblurry-filter)">
+          <ellipse rx="180" ry="181" cx="177.84520461796467" cy="165.057113487683" fill="#f9d555"></ellipse>
+          <ellipse rx="180" ry="181" cx="664.261830594527" cy="286.883284004571" fill="#fbb45c"></ellipse>
+        </g>
+      </svg>
     </div>
 
-    <div class="quiz">
-      <h2>Quiz 2</h2>
-      <div id="question2">"Se hoje é sábado, então amanhã é domingo." é uma proposição composta?</div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('V', 'result2')">É uma proposição composta</button>
+    <div class="content">
+      <div class="header">
+        <a onclick="window.location.href='../../index.html'" class="logo blue">LogiSolver</a>
+        <div class="header-right">
+          <a title="Início" class="black" onclick="window.location.href='../../index.html'">Início</a>
+          <a title="Lógica Proposicional" class="black"
+            onclick="window.location.href='../LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
+          <a title="Tabela Verdade" class="black" onclick="window.location.href='../TruthTable.html'">Tabela Verdade</a>
+          <a title="Expressões Lógicas" class="black"
+            onclick="window.location.href='../LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
+        </div>
       </div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('F', 'result2')">Não é uma proposição composta</button>
-      </div>
-      <div id="result2"></div>
-    </div>
 
-    <div class="quiz">
-      <h2>Quiz 3</h2>
-      <div id="question3">"2 + 2 = 4." é uma proposição composta?</div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('True', 'result3')">É uma proposição composta</button>
+      <div class="banner bgwhite">
+        <div>
+          <h1 class="bannerTitle blue">Proposições Compostas</h1>
+          <h1 class="bannerBodyText">
+            Proposições compostas são construídas a partir de proposições simples através da combinação delas usando
+            operadores lógicos. Os operadores lógicos mais comuns são: </br>
+            Em lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido.
+            </br>
+            Os conectivos que conectam proposições simples são:
+          </h1>
+          <h1 class="bannerTitle blue" style="font-size: 1.2rem;">
+            • E, OU, NÃO, SE... ENTÃO..., SE E SOMENTE SE.
+          </h1>
+        </div>
+        <img class="bannerImage" src="../../images/compoundPropositions.png">
       </div>
-      <div class="option">
-        <button class="button" onclick="checkAnswer('False', 'result3')">Não é uma proposição composta</button>
+
+      <div class="exampleDiv">
+        <h1 class="removeBold">Exemplos de proposições compostas incluem:</h1>
+        <h1 class="blue">
+          • Se está chovendo, então as ruas estão molhadas. </br>
+          • O número é par e é maior que 10.
+        </h1>
       </div>
-      <div id="result3"></div>
+
+      <div class="size">
+        <button class="collapsible">▼ Teste seu conhecimento</button>
+        <div class="expand">
+          <div class="quiz-container">
+            <ol>
+              <div class="quiz">
+                <li><strong>"João não veio à festa ou Maria chegou atrasada."</strong> é uma preposição composta?</li>
+                <div>
+                  <div class="option">
+                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Sim</button>
+                  </div>
+                  <div class="option">
+                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Não</button>
+                  </div>
+                  <div class="answer" id="result1"></div>
+                </div>
+              </div>
+
+              <div class="quiz">
+                <li><strong>"Se hoje é sábado, então amanhã é domingo."</strong> é uma preposição composta?</li>
+                <div>
+                  <div class="option">
+                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Sim</button>
+                  </div>
+                  <div class="option">
+                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Não</button>
+                  </div>
+                  <div class="answer" id="result2"></div>
+                </div>
+              </div>
+
+              <div class="quiz">
+                <li><strong>"2 + 2 = 4."</strong> é uma preposição composta?</li>
+                <div>
+                  <div class="teste">
+                    <div class="option">
+                      <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
+                    </div>
+                    <div class="option">
+                      <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
+                    </div>
+                    <div class="answer" id="result3"></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          </ol>
+        </div>
+      </div>
+
+      <div class="buttonsContainer">
+        <button class="navButton bgyellow white" onClick="window.location.href='Proposition.html'">
+          Proposições
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bglightpink white" onclick="window.location.href='CompoundProposition.html'">
+          Proposições compostas
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bgpink white" onclick="window.location.href='Conteudo.html'">
+          Tipos de Conectivos
+          <p class="alightRight">→</p>
+        </button>
+      </div>
+
+      <div class="buttonsContainer">
+        <button class="navButton bgtiffany white" onClick="window.location.href='Conteudo.html'">
+          Princípios da Lógica </br> Proposicional
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bgblue white" onclick="window.location.href='Conteudo.html'">
+          Tabela Verdade
+          <p class="alightRight">→</p>
+        </button>
+        <button class="navButton bgpurple white" onclick="window.location.href='Conteudo.html'">
+          Classificação de </br> Proposições Compostas
+          <p class="alightRight">→</p>
+        </button>
+      </div>
     </div>
-    <button class="button" onclick="window.location.href='../LearnAboutLogicalProposition.html'">Voltar</button>
   </div>
 </body>
 
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
 </html>

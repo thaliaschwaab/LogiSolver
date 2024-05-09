@@ -10,81 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <title>Proposições</title>
   <style>
-    .quiz {
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      display: flex;
-      align-items: center;
-    }
-
-    #question {
-      margin-bottom: 20px;
-    }
-
-    .option,
-    li {
-      float: left;
-      text-align: center;
-      margin: 10px;
-    }
-
-    .buttonC {
-      border: none;
-      padding: 10px;
-      text-align: center;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      width: 15em;
-    }
-
-    .answer {
-      margin: 10px;
-    }
-
-    .collapsible {
-      background-color: white;
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-      border-radius: 0.5em;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 97.5%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      font-weight: bold;
-    }
-
-    .active,
-    .collapsible:hover {
-      background-color: white;
-    }
-
-    .expand {
-      padding: 0 18px;
-      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-      border-radius: 0.5em;
-      display: none;
-      overflow: hidden;
-      background-color: white;
-      width: 95.5%;
-    }
-
-    .size {
-      width: 112rem;
-      margin: 5em;
-    }
-
-    .exampleDiv {
-      font-family: "Inter", sans-serif;
-      font-size: 0.7rem;
-      text-align: left;
-      padding: 1rem 1rem 0 8rem;
-    }
-
     .removeBold {
       font-weight: normal;
     }
@@ -159,23 +84,17 @@
           <div class="quiz-container">
             <ol>
               <div class="quiz">
-
-
                 <li><strong>"O sol é uma estrela."</strong> é uma preposição?</li>
-
                 <div>
-
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('Veradeiro', 'result1')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Sim</button>
                   </div>
                   <div class="option">
                     <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Não</button>
                   </div>
                   <div class="answer" id="result1"></div>
                 </div>
-
               </div>
-
 
               <div class="quiz">
                 <li><strong>"Pegue aquele livro para mim."</strong> é uma preposição?</li>
@@ -192,24 +111,18 @@
 
               <div class="quiz">
                 <li><strong>"7 é um número primo."</strong> é uma preposição?</li>
-
                 <div>
-
                   <div class="teste">
-
                     <div class="option">
                       <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
                     </div>
                     <div class="option">
                       <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
                     </div>
-
                     <div class="answer" id="result3"></div>
                   </div>
-
                 </div>
               </div>
-
           </div>
           </ol>
         </div>
@@ -220,7 +133,7 @@
           Proposições
           <p class="alightRight">→</p>
         </button>
-        <button class="navButton bglightpink white" onclick="window.location.href='pages/CompoundProposition.html'">
+        <button class="navButton bglightpink white" onclick="window.location.href='CompoundProposition.html'">
           Proposições compostas
           <p class="alightRight">→</p>
         </button>
@@ -246,23 +159,22 @@
       </div>
     </div>
   </div>
-
 </body>
-<script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
 
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  }
-</script>
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+  </script>
 </html>
