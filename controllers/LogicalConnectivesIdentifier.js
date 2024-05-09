@@ -48,7 +48,7 @@ function identificarConectivos() {
   if (conectivosEncontrados.length === 0) {
     document.getElementById("resultado").innerHTML = "Nenhum conectivo encontrado.";
   } else {
-    var resultado = "Conectivos encontrados:<br>";
+    var resultado = "";
     for (var j = 0; j < conectivosEncontrados.length; j++) {
       resultado += conectivosEncontrados[j].nome + " (" + conectivosEncontrados[j].simbolo + ")";
       if (j < conectivosEncontrados.length - 1) {
