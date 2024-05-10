@@ -13,15 +13,9 @@
   <title>Página Inicial</title>
 
   <style>
-    .container {
-      text-align: left;
-      margin: 10rem;
-      margin-top: 10rem;
-    }
-
     .buttonContainers {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
     }
 
@@ -75,29 +69,24 @@
     </div>
 
     <div class="content">
-
       <div class="header">
         <a href="#default" class="logo blue">LogiSolver</a>
         <div class="header-right">
           <a title="Início" class="black" href="#home">Início</a>
           <a title="Lógica Proposicional" class="black" onClick="navQuestions()"
             href="#LearnAboutLogicalProposition">Lógica Proposicional</a>
-          <a title="Tabela Verdade" class="black" onclick="navTruthTable()" href="#TruthTableGenerator">Tabela Verdade</a>
+          <a title="Tabela Verdade" class="black" onclick="navTruthTable()" href="#TruthTableGenerator">Tabela
+            Verdade</a>
           <a title="Expressões Lógicas" class="black" onclick="navLogicExpression()"
             href="#LogicalConnectivesIdentifier">Expressões Lógicas</a>
         </div>
       </div>
-
       <div>
         <img class="image" src="images/mainPage.png">
       </div>
-
-      <div class="container">
-
-        <h1 class="removeBold blue">Aprenda sobre...</h1>
-
+      <div>
+        <h1 style="margin-left: 10rem;" class="removeBold blue">Aprenda sobre...</h1>
         <div class="buttonContainers">
-
           <button class="button bgyellow white" onClick="navQuestions()">
             Lógica </br> Proposicional
             <p class="alightRight">→</p>
@@ -110,9 +99,7 @@
             Expressões </br> Lógicas
             <p class="alightRight">→</p>
           </button>
-
         </div>
-
       </div>
     </div>
   </div>
