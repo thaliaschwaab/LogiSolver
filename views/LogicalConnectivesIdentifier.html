@@ -1,171 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <title>Identificador de Conectivos Lógicos</title>
-    <style>
-      .texttitlediv {
-        font-family: "Inter", sans-serif;
-        font-size: 2rem;
-        text-align: left;
-        padding: 3rem 1rem 0 8rem;
-      }
-      input {
-        border: none;
-        border-radius: 1rem;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        background-image: linear-gradient(to right, #e6e6e6, #f3f3f3);
-        margin-left: 5rem;
-        padding: 1.5rem 1rem 1.5rem 1.5rem;
-        width: 107rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <title>Identificador de Conectivos Lógicos</title>
+  <style>
+    .texttitlediv {
+      font-family: "Inter", sans-serif;
+      font-size: 2rem;
+      text-align: left;
+      padding: 3rem 5rem 2rem 5rem;
+      align-self: flex-start;
+    }
 
-      ::placeholder {
-        font-style: italic;
-      }
+    input {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-image: linear-gradient(to right, #e6e6e6, #f3f3f3);
+      width: 90%;
+      padding: 1.5rem 1rem 1.5rem 1.5rem;
+    }
 
-      .generateButton {
-        background-color: #29aefd;
-        font-family: "Inter", sans-serif;
-        font-size: 1.2rem;
-        color: white;
-        border: none;
-        border-radius: 0.5rem;
-        padding: 1rem 4rem 1rem 4rem;
-        margin-top: 1rem;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        cursor: pointer;
-        margin-right: 4rem;
-        float: right;
-      }
+    ::placeholder {
+      font-style: italic;
+    }
 
-      .speech {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        border-radius: 1rem;
-        background: white;
-        width: 95rem;
-        height: 7rem;
-        margin-left: 5rem;
-        margin-top: 5rem;
-        position: relative;
-      }
+    .generateButton {
+      background-color: #29aefd;
+      font-family: "Inter", sans-serif;
+      font-size: 1.2rem;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 1rem 4rem 1rem 4rem;
+      margin-top: 1rem;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      cursor: pointer;
+      margin-right: 4rem;
+      float: right;
+      align-self: flex-end;
+    }
 
-      .speech:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 0;
-        height: 0;
-        border: 43px solid transparent;
-        border-right-color: #ffffff;
-        border-left: 0;
-        border-top: 0;
-        margin-top: -21.5px;
-        margin-left: -43px;
-      }
+    .speech {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 1rem;
+      background: white;
+      height: 7rem;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      margin-top: 5rem;
+      position: relative;
+      width: -webkit-fill-available;
+    }
 
-      .speechText {
-        margin-left: 2rem;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
+    .speech:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border: 43px solid transparent;
+      border-right-color: #ffffff;
+      border-left: 0;
+      border-top: 0;
+      margin-top: -21.5px;
+      margin-left: -43px;
+    }
 
-      .italic {
-        font-style: italic;
-        color: grey;
-        margin-left: 2rem;
-        margin-top: 1rem;
-        font-size: 1rem;
-      }
+    .speechText {
+      margin-left: 2rem;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
 
-      .monsterimg {
-        width: auto;
-        height: 10rem;
-        margin-top: 5rem;
-        margin-left: 5rem;
-      }
+    .italic {
+      font-style: italic;
+      color: grey;
+      margin-left: 2rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
 
-      .speechdiv {
-        display: inline-flex;
-        align-items: center;
-      }
-    </style>
-    <script src="../controllers/LogicalConnectivesIdentifier.js"></script>
-  </head>
+    .monsterimg {
+      width: auto;
+      height: 10rem;
+      margin-top: 5rem;
+      margin-left: 5rem;
+    }
 
-  <body>
-    <div class="outside">
-      <div class="circle">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-          xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 525" opacity="0.38">
-          <defs>
-            <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
-              primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feGaussianBlur stdDeviation="53" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
-                edgeMode="none" result="blur"></feGaussianBlur>
-            </filter>
-          </defs>
-          <g filter="url(#bbblurry-filter)">
-            <ellipse rx="180" ry="181" cx="177.84520461796467" cy="165.057113487683" fill="#f9d555"></ellipse>
-            <ellipse rx="180" ry="181" cx="664.261830594527" cy="286.883284004571" fill="#fbb45c"></ellipse>
-          </g>
-        </svg>
+    .speechdiv {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .connectors {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 30rem 30rem;
+      justify-content: center;
+      width: 100%;
+      align-content: stretch;
+    }
+
+    .rectangle {
+      display: flex;
+      width: 25rem;
+      height: 6rem;
+      background-color: white;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.02);
+      justify-content: flex-start;
+      flex-direction: row;
+      margin-top: 2rem;
+    }
+
+    .square {
+      width: 4rem;
+      height: 4rem;
+      left: 1rem;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      margin-top: 1rem;
+      margin-left: 0.5rem;
+    }
+
+    .connectorText {
+      padding-left: 1rem;
+    }
+  </style>
+  <script src="../controllers/LogicalConnectivesIdentifier.js"></script>
+</head>
+
+<body>
+  <div class="outside">
+    <div class="circle">
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 525" opacity="0.38">
+        <defs>
+          <filter id="bbblurry-filter" x="-100%" y="-100%" width="400%" height="400%" filterUnits="objectBoundingBox"
+            primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feGaussianBlur stdDeviation="53" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic"
+              edgeMode="none" result="blur"></feGaussianBlur>
+          </filter>
+        </defs>
+        <g filter="url(#bbblurry-filter)">
+          <ellipse rx="180" ry="181" cx="177.84520461796467" cy="165.057113487683" fill="#f9d555"></ellipse>
+          <ellipse rx="180" ry="181" cx="664.261830594527" cy="286.883284004571" fill="#fbb45c"></ellipse>
+        </g>
+      </svg>
+    </div>
+    <div class="content">
+      <div class="header">
+        <a onclick="window.location.href='../index.html'" class="logo blue">LogiSolver</a>
+        <div class="header-right">
+          <a title="Início" class="black" onclick="window.location.href='../index.html'">Início</a>
+          <a title="Lógica Proposicional" class="black"
+            onclick="window.location.href='LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
+          <a title="Tabela Verdade" class="black" onclick="window.location.href='TruthTableGenerator.html'">Tabela
+            Verdade</a>
+          <a title="Expressões Lógicas" class="black"
+            onclick="window.location.href='LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
+        </div>
       </div>
-      <div class="content">
-        <div class="header">
-          <a onclick="window.location.href='../index.html'" class="logo blue">LogiSolver</a>
-          <div class="header-right">
-            <a title="Início" class="black" onclick="window.location.href='../index.html'">Início</a>
-            <a title="Lógica Proposicional" class="black"
-              onclick="window.location.href='LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
-            <a title="Tabela Verdade" class="black" onclick="window.location.href='TruthTableGenerator.html'">Tabela Verdade</a>
-            <a title="Expressões Lógicas" class="black"
-              onclick="window.location.href='LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
-          </div>
-        </div>
 
-        <div class="banner bgwhite">
-          <div>
-            <h1 class="bannerTitle blue">Conectivos Lógicos</h1>
-            <h1 class="bannerBodyText">
-              Este identificador é capaz de receber uma frase com conectivos em texto e retornar quais os conectivos lógicos presentes. </br>
-              São consideradas frases de proposição composta aquelas que contêm os seguintes conectivos:
-            </h1>
-            <h1 class="bannerTitle blue" style="font-size: 1.2rem;">
-              • Negação: não, não é o caso que, não é verdade que. </br>
-              • Conjunção: e, também, além de. </br>
-              • Disjunção: ou, mas. </br>
-              • Implicação: apenas se, se, então. </br>
-              • Bicondicional: se e somente se. </br>
-            </h1>
-          </div>
-          <img class="bannerImage" src="../images/identifier.png">
-        </div>
-
+      <div class="banner bgwhite">
         <div>
-          <h1 class="texttitlediv blue">Gerador de Conectivos Lógicos:</h1>
-          <input 
-            placeholder="Insira uma proposição composta. Exemplo: João é médico e Pedro é dentista." 
-            type="text" 
-            id="proposicao"
-          >
-          <button class="generateButton" onclick="identificarConectivos()">Gerar</button>
-          <div class="speechdiv">
-            <img class="monsterimg" src="../images/connectives.png">
-            <div class="speech">
-              <p class="italic">Os conectivos encontrados foram:</p>
-              <p class="speechText blue" id="resultado">Digite uma frase para encontrar os conectivos!</p>
-            </div>
+          <h1 class="bannerTitle blue">Conectivos Lógicos</h1>
+          <h1 class="bannerBodyText grey">
+            Este identificador é capaz de receber uma frase com conectivos em texto e retornar quais os conectivos
+            lógicos presentes. </br>
+            São consideradas frases de proposição composta aquelas que contêm os seguintes conectivos:
+          </h1>
+        </div>
+        <img class="bannerImage" src="../images/identifier.png">
+      </div>
+
+      <div class="connectors">
+        <div class="rectangle">
+          <div class="square bgyellow">
+            <h2>!</h2>
           </div>
+          <div class="connectorText">
+            <h3>Negação</h3>
+            <p class="grey">não, não é o caso, não é verdade que</p>
+          </div>
+        </div>
+        <div class="rectangle">
+          <div class="square bglightpink">
+            <h2>&&</h2>
+          </div>
+          <div class="connectorText">
+            <h3>Conjunção</h3>
+            <p class="grey">e, também, além de</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="connectors">
+        <div class="rectangle">
+          <div class="square bgpink">
+            <h2>||</h2>
+          </div>
+          <div class="connectorText">
+            <h3>Disjunção</h3>
+            <p class="grey">e, também, além de</p>
+          </div>
+        </div>
+        <div class="rectangle">
+          <div class="square bgtiffany">
+            <h2>></h2>
+          </div>
+          <div class="connectorText">
+            <h3>Implicação</h3>
+            <p class="grey">apenas se, se, então</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="connectors">
+        <div class="rectangle">
+          <div class="square bgblue">
+            <h2>
+              <>
+            </h2>
+          </div>
+          <div class="connectorText">
+            <h3>Bicondicional</h3>
+            <p class="grey">se e somente se</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1 class="texttitlediv blue">Gerador de Conectivos Lógicos:</h1>
+        <input placeholder="Insira uma proposição composta. Exemplo: João é médico e Pedro é dentista." type="text"
+          id="proposicao">
+        <button class="generateButton" onclick="identificarConectivos()">Gerar</button>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <img class="monsterimg" src="../images/connectives.png">
+        <div class="speech">
+          <p class="italic">Os conectivos encontrados foram:</p>
+          <p class="speechText blue" id="resultado">Digite uma frase para encontrar os conectivos!</p>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

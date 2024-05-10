@@ -43,7 +43,8 @@
           <a title="Início" class="black" onclick="window.location.href='../../index.html'">Início</a>
           <a title="Lógica Proposicional" class="black"
             onclick="window.location.href='../LearnAboutLogicalProposition.html'">Lógica Proposicional</a>
-          <a title="Tabela Verdade" class="black" onclick="window.location.href='../TruthTableGenerator.html'">Tabela Verdade</a>
+          <a title="Tabela Verdade" class="black" onclick="window.location.href='../TruthTableGenerator.html'">Tabela
+            Verdade</a>
           <a title="Expressões Lógicas" class="black"
             onclick="window.location.href='../LogicalConnectivesIdentifier.html'">Expressões Lógicas</a>
         </div>
@@ -78,8 +79,11 @@
         </h1>
       </div>
 
-      <div class="size">
-        <button class="collapsible">▼ Teste seu conhecimento</button>
+      <div>
+        <div class="collapsible grey">
+          <p>Teste seu conhecimento</p>
+          <p>⮟</p>
+        </div>
         <div class="expand">
           <div class="quiz-container">
             <ol>
@@ -112,15 +116,13 @@
               <div class="quiz">
                 <li><strong>"7 é um número primo."</strong> é uma preposição?</li>
                 <div>
-                  <div class="teste">
-                    <div class="option">
-                      <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
-                    </div>
-                    <div class="option">
-                      <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
-                    </div>
-                    <div class="answer" id="result3"></div>
+                  <div class="option">
+                    <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
                   </div>
+                  <div class="option">
+                    <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
+                  </div>
+                  <div class="answer" id="result3"></div>
                 </div>
               </div>
           </div>
@@ -161,20 +163,21 @@
   </div>
 </body>
 
-  <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-  </script>
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
+
 </html>

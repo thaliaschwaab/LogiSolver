@@ -14,7 +14,8 @@
       font-family: "Inter", sans-serif;
       font-size: 2rem;
       text-align: left;
-      padding: 3rem 1rem 0 8rem;
+      padding: 3rem 5rem 2rem 5rem;
+      align-self: flex-start;
     }
 
     input {
@@ -22,9 +23,8 @@
       border-radius: 1rem;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       background-image: linear-gradient(to right, #e6e6e6, #f3f3f3);
-      margin-left: 5rem;
+      width: 90%;
       padding: 1.5rem 1rem 1.5rem 1.5rem;
-      width: 107rem;
     }
 
     ::placeholder {
@@ -44,6 +44,7 @@
       cursor: pointer;
       margin-right: 4rem;
       float: right;
+      align-self: flex-end;
     }
 
     th {
@@ -79,12 +80,12 @@
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       border-radius: 1rem;
       background: white;
-      width: 95rem;
       height: auto;
       margin-left: 5rem;
-      margin-top: 3rem;
+      margin-right: 5rem;
+      margin-top: 5rem;
       position: relative;
-      margin-bottom: 2rem;
+      width: -webkit-fill-available;
     }
 
     .speech:before {
@@ -182,13 +183,12 @@
         <img class="bannerImage" src="../images/truthTable.png">
       </div>
 
-      <div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
         <h1 class="texttitlediv blue">Gerador de Tabela Verdade:</h1>
         <input placeholder="Insira uma expressão lógica. Exemplo: (A <> B) || (C && D)" type="text" id="expression">
         <button class="generateButton" onclick="generateTruthTable()">Gerar</button>
-
       </div>
-      <div class="speechdiv">
+      <div style="display: flex; align-items: center; justify-content: center;">
         <img class="monsterimg" src="../images/monsterTruthTable.png">
         <div class="speech">
           <p class="italic">A tabela verdade da proposição inserida é:</p>

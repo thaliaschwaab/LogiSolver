@@ -55,6 +55,10 @@ body {
   color: #FFFFFF;
 }
 
+.grey {
+  color: #3E3E3E;
+}
+
 /* header */
 .header {
   overflow: hidden;
@@ -129,9 +133,9 @@ body {
 /* learning pages */
 .buttonsContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 1rem 5rem 1rem 5rem;
+  padding: 1rem 0 1rem 0;
 }
 
 .navButton {
@@ -155,18 +159,17 @@ body {
   padding: 1rem 1rem 1rem 1rem;
   border: none;
   border-radius: 1rem;
-  width: 107rem;
   height: auto;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin: 1rem 1rem 1rem 5rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.02), 0 6px 20px 0 rgba(0, 0, 0, 0.02);
+  margin: 1rem 1rem 1rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .bannerImage {
-  width: 25%;
-  height: 25%;
+  width: 20%;
+  height: 20%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -180,7 +183,7 @@ body {
   text-align: left;
   padding: 1rem 1rem 1rem 2.5rem;
   width: 50%;
-  font-weight: normal;
+  font-weight: 200;
   text-align: justify;
 }
 
@@ -199,6 +202,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 
 #question {
   margin-bottom: 20px;
@@ -226,17 +230,16 @@ li {
 }
 
 .collapsible {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 1rem 0 1rem;
   background-color: white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.5em;
-  color: #444;
   cursor: pointer;
-  padding: 18px;
-  width: 97.5%;
-  border: none;
+  padding: 0.5rem 1rem 0.5rem 3rem;
   text-align: left;
-  outline: none;
-  font-size: 15px;
   font-weight: bold;
 }
 
@@ -246,24 +249,21 @@ li {
 }
 
 .expand {
-  padding: 0 18px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 1rem 1rem 1rem;
   border-radius: 0.5em;
   display: none;
   overflow: hidden;
   background-color: white;
-  width: 95.5%;
-}
-
-.size {
-  width: 112rem;
-  margin: 5em;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* example */
 .exampleDiv {
   font-family: "Inter", sans-serif;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   text-align: left;
-  padding: 1rem 1rem 0 8rem;
+  padding: 1rem 1rem 1rem 5rem;
 }
