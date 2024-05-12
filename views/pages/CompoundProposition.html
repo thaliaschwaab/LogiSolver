@@ -54,24 +54,37 @@
         <div>
           <h1 class="bannerTitle blue">Proposições Compostas</h1>
           <h1 class="bannerBodyText">
-            Proposições compostas são construídas a partir de proposições simples através da combinação delas usando
-            operadores lógicos. Os operadores lógicos mais comuns são: </br>
-            Em lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido.
+            Agora que você sabe o que são proposições, vamos desvendar quais são os dois tipos de proposições. </br>
+            As proposições podem ser <strong>simples</strong> ou <strong>compostas</strong>. As proposições simples são
+            as que vimos na lição anterior, que devem ter um <i>valor-verdade</i>, por exemplo <i>“Ângela tem 35
+              anos”</i> e <i>“o céu e azul”</i>. </br> </br>
+            Proposições compostas são aquelas que são formadas pela combinação de duas ou mais proposições, por exemplo
+            <i>“Ângela tem 35 anos <strong>e</strong> o céu é azul”</i> e <i>“vamos ao cinema <strong>ou</strong> vamos ao teatro”</i>. </br> </br>
+            Na lógica proposicional as proposições são representadas por símbolos, sendo cada proposição simples um
+            símbolo (uma letra do alfabeto romano), como no exemplo abaixo: </br>
+            <strong>A</strong> = Ângela tem 35 anos. </br>
+            <strong>B</strong> = O céu é azul. </br>
+            Com isso, a proposição composta <i>“Ângela tem 35 anos <strong>e</strong> o céu é azul”</i> pode ser representada por
+            <strong>A e B</strong>. </br> </br>
+            A proposição composta <i>“vamos ao cinema <strong>ou</strong> vamos ao teatro”</i> pode ser dividida da seguinte maneira:
             </br>
-            Os conectivos que conectam proposições simples são:
-          </h1>
-          <h1 class="bannerTitle blue" style="font-size: 1.2rem;">
-            • E, OU, NÃO, SE... ENTÃO..., SE E SOMENTE SE.
+            <strong>C</strong> = Vamos ao cinema. </br>
+            <strong>D</strong> = Vamos ao teatro. </br>
+            Resultando na representação <strong>C ou D</strong>. </br> </br>
+            Note que as proposições são unidas através de elementos como <strong>“e”</strong> e <strong>“ou”</strong>.
+            Estes elementos são chamados de <i>operadores</i> ou <i>conectivos lógicos</i>. Vamos aprender mais sobre
+            eles na próxima lição. </br>
           </h1>
         </div>
         <img class="bannerImage" src="../../images/compoundPropositions.png">
       </div>
 
       <div class="exampleDiv">
-        <h1 class="removeBold">Exemplos de proposições compostas incluem:</h1>
+        <h1 class="removeBold">Mais exemplos de proposições compostas incluem:</h1>
         <h1 class="blue">
           • Se está chovendo, então as ruas estão molhadas. </br>
-          • O número é par e é maior que 10.
+          • O número é par e é maior que 10. </br>
+          • André foi ao baile, mas Maria ficou em casa.
         </h1>
       </div>
 
@@ -84,26 +97,26 @@
           <div class="quiz-container">
             <ol>
               <div class="quiz grey">
-                <li><strong>"João não veio à festa ou Maria chegou atrasada."</strong> é uma preposição composta?</li>
+                <li><strong>Uma proposição composta é composta por duas ou mais proposições simples.</strong></li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Falso</button>
                   </div>
                   <div class="answer" id="result1"></div>
                 </div>
               </div>
 
               <div class="quiz grey">
-                <li><strong>"Se hoje é sábado, então amanhã é domingo."</strong> é uma preposição composta?</li>
+                <li>A frase <strong>"Se hoje é sábado, então amanhã é domingo."</strong> é uma preposição composta?</li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Falso</button>
                   </div>
                   <div class="answer" id="result2"></div>
                 </div>
@@ -113,12 +126,25 @@
                 <li><strong>"2 + 2 = 4."</strong> é uma preposição composta?</li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Falso</button>
                   </div>
                   <div class="answer" id="result3"></div>
+                </div>
+              </div>
+
+              <div class="quiz grey">
+                <li>A frase <strong>"João não veio à festa ou Maria chegou atrasada."</strong> é uma preposição composta?</li>
+                <div>
+                  <div class="option">
+                    <button class="buttonC bggreen" onclick="checkAnswer('Sim', 'result4')">Verdadeiro</button>
+                  </div>
+                  <div class="option">
+                    <button class="buttonC bgpink" onclick="checkAnswer('Nao', 'result4')">Falso</button>
+                  </div>
+                  <div class="answer" id="result4"></div>
                 </div>
               </div>
           </div>
