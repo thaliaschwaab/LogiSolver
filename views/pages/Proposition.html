@@ -54,27 +54,27 @@
         <div>
           <h1 class="bannerTitle blue">Proposições</h1>
           <h1 class="bannerBodyText">
-            Proposições são declarações afirmativas ou negativas que podem ser consideradas verdadeiras ou falsas. </br>
-            Em lógica e matemática, as proposições são expressas de forma precisa e têm um valor de verdade definido.
-            </br>
-            Elas podem ser simples, como "2 é um número par", ou compostas, como "Se chove, então as ruas ficam
-            molhadas". </br>
-            Por enquanto, vamos analisar as proposições simples. </br>
-            Proposições simples são declarações que expressam uma ideia única e podem ser avaliadas como verdadeiras ou
-            falsas de forma independente. </br>
-            Elas não contêm proposições subordinadas ou conectadas por operadores lógicos.
+            Proposições são os argumentos analisados pela lógica proposicional. </br> </br>
+            Considera-se uma proposição qualquer sentença declarativa que possa assumir o valor de verdadeiro ou falso.
+            A propriedade que define o valor (verdadeiro ou falso) de uma proposição é chamada de valor-verdade.</br> </br>
+            É importante lembrar que a veracidade da afirmação (valor-verdade) não influencia no fato dela ser uma
+            proposição, já que a frase “meus sapatos são cinza” pode ser verdadeira se dita por alguém calçando sapatos
+            cinzas e falsa se dita por alguém com sapatos vermelhos. Em ambos os casos a afirmação continua sendo uma
+            proposição. </br> </br>
+            Exemplos de proposições são “o gato tem pelos” e “o carro é veloz”, já que ambas são afirmações,
+            independentemente de sua veracidade. São exemplos de frases que não são proposições “venha aqui!” e “quantos
+            anos você tem?”.
           </h1>
         </div>
         <img class="bannerImage" src="../../images/propositions.png">
       </div>
 
       <div class="exampleDiv">
-        <h1 class="removeBold">Exemplos de proposições simples incluem:</h1>
+        <h1 class="removeBold">Mais exemplos de proposições incluem:</h1>
         <h1 class="blue">
           • O céu é azul. </br>
-          • 2 + 2 = 4. </br>
+          • 2 + 2 = 7. </br>
           • A lua é um satélite natural da Terra. </br>
-          • Brasil ganhou a Copa do Mundo de 2002. </br>
           • 1 é menor que 5.
         </h1>
       </div>
@@ -88,41 +88,54 @@
           <div class="quiz-container">
             <ol>
               <div class="quiz grey">
-                <li><strong>"O sol é uma estrela."</strong> é uma preposição?</li>
+                <li><strong>Para que uma afirmação seja considerada uma proposição é necessário que ela tenha um valor-verdade.</strong></li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Falso</button>
                   </div>
                   <div class="answer" id="result1"></div>
                 </div>
               </div>
 
               <div class="quiz grey">
-                <li><strong>"Pegue aquele livro para mim."</strong> é uma preposição?</li>
+                <li><strong>Uma frase sem valor verdade pode ser uma proposição.</strong></li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Falso</button>
                   </div>
                   <div class="answer" id="result2"></div>
                 </div>
               </div>
 
               <div class="quiz grey">
-                <li><strong>"7 é um número primo."</strong> é uma preposição?</li>
+                <li>A frase <strong>"meu gato fala francês."</strong> é uma preposição?</li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Falso</button>
                   </div>
                   <div class="answer" id="result3"></div>
+                </div>
+              </div>
+
+              <div class="quiz grey">
+                <li>A frase <strong>"você está bem?"</strong> é uma preposição?</li>
+                <div>
+                  <div class="option">
+                    <button class="buttonC bggreen" onclick="checkAnswer('Sim', 'result4')">Verdadeiro</button>
+                  </div>
+                  <div class="option">
+                    <button class="buttonC bgpink" onclick="checkAnswer('Nao', 'result4')">Falso</button>
+                  </div>
+                  <div class="answer" id="result4"></div>
                 </div>
               </div>
           </div>

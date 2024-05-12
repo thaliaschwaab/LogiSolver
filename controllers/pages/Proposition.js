@@ -1,5 +1,5 @@
 function checkAnswer(answer, resultId) {
-  if (answer === 'Verdadeiro' || answer === 'F' || answer === 'True') {
+  if (answer === 'Verdadeiro' || answer === 'F' || answer === 'True' || answer === 'Nao') {
     var color = '#89CF7D';
     document.getElementById(resultId).innerHTML = 'A resposta está <b>correta</b>.';
     document.getElementById(resultId).style.color = color;
