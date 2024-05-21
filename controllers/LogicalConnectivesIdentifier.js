@@ -1,11 +1,10 @@
-
 function identificarConectivos() {
   var proposicao = document.getElementById("proposicao").value.toLowerCase();
   var conectivosEquivalentes = {
     "~": ["não", "não é o caso que", "não é verdade que"],
-    "∧": ["e", "também", "além de"],
+    "∧": ["\\be\\b", "também", "além de"],
     "∨": ["ou", "mas"],
-    ">": ["apenas se", "se", "então"],
+    ">": ["\\bse\\b.*\\bentão\\b", "apenas se"],
     "<>": ["se e somente se"]
   };
   var conectivosNomes = {
@@ -19,39 +18,40 @@ function identificarConectivos() {
 
   for (var conectivo in conectivosEquivalentes) {
     var palavrasChave = conectivosEquivalentes[conectivo];
-    if (conectivo === ">" || conectivo === "<>") {
-      var indexSe = palavrasChave.indexOf("se");
-      var indexEntao = palavrasChave.indexOf("então");
-      if (indexSe !== -1 && indexEntao !== -1 && indexSe < indexEntao) {
-        var indexProposicaoSe = proposicao.indexOf("se");
-        var indexProposicaoEntao = proposicao.indexOf("então");
-        if (indexProposicaoSe !== -1 && indexProposicaoEntao !== -1 && indexProposicaoSe < indexProposicaoEntao) {
-          conectivosEncontrados.push({
-            simbolo: conectivo,
-            nome: conectivosNomes[conectivo]
-          });
-        }
-      }
-    } else {
-      for (var i = 0; i < palavrasChave.length; i++) {
-        if (proposicao.includes(palavrasChave[i])) {
-          conectivosEncontrados.push({
-            simbolo: conectivo,
-            nome: conectivosNomes[conectivo]
-          });
-          break;
-        }
+    for (var i = 0; i < palavrasChave.length; i++) {
+      var palavraChave = palavrasChave[i];
+      var regex = new RegExp(palavraChave, 'gi');
+      var match;
+      while ((match = regex.exec(proposicao)) !== null) {
+        conectivosEncontrados.push({
+          simbolo: conectivo,
+          nome: conectivosNomes[conectivo],
+          posicao: match.index
+        });
       }
     }
   }
 
-  if (conectivosEncontrados.length === 0) {
+  conectivosEncontrados.sort(function(a, b) {
+    return a.posicao - b.posicao;
+  });
+
+  var resultadoFinal = [];
+  var posicaoAtual = -1;
+  for (var j = 0; j < conectivosEncontrados.length; j++) {
+    if (conectivosEncontrados[j].posicao >= posicaoAtual) {
+      resultadoFinal.push(conectivosEncontrados[j]);
+      posicaoAtual = conectivosEncontrados[j].posicao + conectivosEncontrados[j].nome.length;
+    }
+  }
+
+  if (resultadoFinal.length === 0) {
     document.getElementById("resultado").innerHTML = "Nenhum conectivo encontrado.";
   } else {
     var resultado = "";
-    for (var j = 0; j < conectivosEncontrados.length; j++) {
-      resultado += conectivosEncontrados[j].nome + " (" + conectivosEncontrados[j].simbolo + ")";
-      if (j < conectivosEncontrados.length - 1) {
+    for (var k = 0; k < resultadoFinal.length; k++) {
+      resultado += resultadoFinal[k].nome + " (" + resultadoFinal[k].simbolo + ")";
+      if (k < resultadoFinal.length - 1) {
         resultado += ", ";
       }
     }
