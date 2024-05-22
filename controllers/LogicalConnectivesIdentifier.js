@@ -1,11 +1,11 @@
 function identificarConectivos() {
   var proposicao = document.getElementById("proposicao").value.toLowerCase();
   var conectivosEquivalentes = {
-    "~": ["não", "não é o caso que", "não é verdade que"],
-    "∧": ["\\be\\b", "também", "além de"],
-    "∨": ["ou", "mas"],
-    ">": ["\\bse\\b.*\\bentão\\b", "apenas se"],
-    "<>": ["se e somente se"]
+    "~": ["não", "não é o caso que", "não é verdade que", "é falso que"],
+    "∧": ["\\be\\b", "também", "além de", "além disso", "\\bmas\\b", "porém", "ainda", "contudo"],
+    "∨": ["\\bou\\b"],
+    ">": ["\\bse\\b.*\\bentão\\b", "apenas se", "no caso de", "condição de que"],
+    "<>": ["\\bse e somente se\\b"]
   };
   var conectivosNomes = {
     "~": "Negação",
