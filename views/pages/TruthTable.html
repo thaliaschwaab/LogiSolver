@@ -13,6 +13,24 @@
     .removeBold {
       font-weight: normal;
     }
+
+    th {
+      background-image: linear-gradient(to right, #7befe5, #29aefd);
+      color: white;
+      padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    }
+
+    table {
+      background-color: white;
+      border-radius: 0.5rem;
+      position: relative;
+      left: 10%;
+      margin-top: 1rem;
+    }
+
+    tr {
+      text-align: center;
+    }
   </style>
   <script src="../../controllers/pages/TruthTable.js"></script>
 </head>
@@ -54,30 +72,176 @@
         <div>
           <h1 class="bannerTitle blue">Tabela Verdade</h1>
           <h1 class="bannerBodyText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae varius ligula. Class aptent taciti
-            </br>
-            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Quisque elementum turpis sit amet
-            </br>
-            tellus maximus, in congue erat pulvinar. Maecenas vitae leo mauris. Mauris convallis purus eu nisl faucibus
-            </br>
-            elementum. Curabitur faucibus ultrices erat at finibus. Nulla sit amet augue at arcu tempus elementum eget
-            </br>
-            at nunc. Praesent luctus quam et erat eleifend fringilla. Cras sit amet pulvinar nulla. Praesent ac cursus
-            </br>
-            orci, congue
+            Tabelas verdade são utilizadas para avaliar a veracidade de proposições compostas, todas as combinações de valores
+             verdade são analisadas e cada linha representa uma dessas combinações. A última coluna mostra o valor verdade
+             da proposição composta.  </br>
+            Agora vamos analisar a tabela verdade de cada um dos conectivos estudados. </br> </br>
+            <strong>Conjunção:</strong> É verdadeira apenas quando ambos os valores verdade forem verdadeiros. </br>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>P && Q</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>F</td>
+                    <td>F</td>
+                    <td>F</td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>V</td>
+                    <td>F</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>F</td>
+                    <td>F</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>V</td>
+                    <td>V</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <strong>Disjunção:</strong> Retorna verdadeiro quando pelo menos um dos valores verdade for verdadeiro. </br>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>P || Q</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>F</td>
+                    <td>F</td>
+                    <td>F</td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>V</td>
+                    <td>V</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>F</td>
+                    <td>V</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>V</td>
+                    <td>V</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <strong>Condicional:</strong> É falsa apenas quando o primeiro valor verdade for verdadeiro e o segundo falso. </br>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>P → Q</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>F</td>
+                    <td>F</td>
+                    <td>V</td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>V</td>
+                    <td>V</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>F</td>
+                    <td>F</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>V</td>
+                    <td>V</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <strong>Bicondicional:</strong> É verdadeira quando ambos os valores verdade forem iguais. </br> 
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>P</th>
+                    <th>Q</th>
+                    <th>P <-> Q</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>F</td>
+                    <td>F</td>
+                    <td>V</td>
+                  </tr>
+                  <tr>
+                    <td>F</td>
+                    <td>V</td>
+                    <td>F</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>F</td>
+                    <td>F</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>V</td>
+                    <td>V</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <strong>Negação:</strong> Retorna sempre o oposto do valor verdade. </br>
+            <div>
+              <table>
+                <thead>
+                  <tr>
+                    <th>P</th>
+                    <th>!P</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>F</td>
+                    <td>V</td>
+                  </tr>
+                  <tr>
+                    <td>V</td>
+                    <td>F</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </h1>
         </div>
         <img class="bannerImage" src="../../images/truthTable.png">
       </div>
 
       <div class="exampleDiv">
-        <h1 class="removeBold">Exemplos incluem:</h1>
-        <h1 class="blue">
-          • Exemplo. </br>
-          • Exemplo. </br>
-          • Exemplo. </br>
-          • Exemplo. </br>
-          • Exemplo.
+        <h1 class="blue">Dica:</h1>
+        <h1 class="removeBold">
+          Utilize o Gerador de Tabela Verdade para praticar seu conhecimento!
         </h1>
       </div>
 
@@ -90,39 +254,39 @@
           <div class="quiz-container">
             <ol>
               <div class="quiz grey">
-                <li><strong>"afirmação."</strong> correta?</li>
+                <li><strong>A Negação retorna sempre o oposto do valor verdade.</strong></li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('Verdadeiro', 'result1')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('Falso', 'result1')">Falso</button>
                   </div>
                   <div class="answer" id="result1"></div>
                 </div>
               </div>
 
               <div class="quiz grey">
-                <li><strong>"afirmação."</strong> correta??</li>
+                <li><strong>A Disjunção é verdadeira apenas quando ambos os valores verdade forem verdadeiros.</strong></li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('V', 'result2')">Vedadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('F', 'result2')">Falso</button>
                   </div>
                   <div class="answer" id="result2"></div>
                 </div>
               </div>
 
               <div class="quiz grey">
-                <li><strong>"afirmação."</strong> correta??</li>
+                <li><strong>O conectivo Bicondicional sempre retorna verdadeiro.</strong></li>
                 <div>
                   <div class="option">
-                    <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Sim</button>
+                    <button class="buttonC bggreen" onclick="checkAnswer('True', 'result3')">Verdadeiro</button>
                   </div>
                   <div class="option">
-                    <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Não</button>
+                    <button class="buttonC bgpink" onclick="checkAnswer('False', 'result3')">Falso</button>
                   </div>
                   <div class="answer" id="result3"></div>
                 </div>
