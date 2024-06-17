@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -50,14 +50,14 @@
     th {
       background-image: linear-gradient(to right, #7befe5, #29aefd);
       color: white;
-      padding: 0.5rem 5rem 0.5rem 5rem;
+      padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     }
 
     table {
       background-color: white;
       border-radius: 0.5rem;
       position: relative;
-      left: 30%;
+      left: 15%;
       margin-top: 1rem;
     }
 
@@ -173,22 +173,28 @@
           <h1 class="bannerTitle blue">Tabela Verdade</h1>
           <h1 class="bannerBodyText">
             Este gerador é capaz de receber uma expressão lógica e retornar a sua respectiva tabela verdade. </br> </br>
-            Os seguintes caracteres são aceitos pelo gerador: </br>
+            Os seguintes caracteres são aceitos pelo gerador:
           </h1>
           <h1 class="bannerTitle blue" style="font-size: 1.2rem;">
             • Negação: ! </br>
             • Conjunção: && </br>
             • Disjunção: || </br>
-            • Implicação: > </br>
-            • Bicondicional: <> </br>
+            • Implicação: => </br>
+            • Bicondicional: <=> </br>
           </h1>
+          <h1 class="bannerBodyText" style="font-weight: bold;">
+            Lembre-se de utilizar parênteses para delimitar as expressões, como por exemplo: </h1>
+            <h1 class="bannerTitle blue" style="font-size: 1.2rem;">
+              • (A || B) <=> (A && C) </br>
+              • (A => C) || (C <=> D)</br>
+            </h1>
         </div>
         <img class="bannerImage" src="../images/truthTable.png">
       </div>
 
       <div style="display: flex; flex-direction: column; align-items: center;">
         <h1 class="texttitlediv blue">Gerador de Tabela Verdade:</h1>
-        <input placeholder="Insira uma expressão lógica. Exemplo: (A <> B) || (C && D)" type="text" id="expression">
+        <input placeholder="Insira uma expressão lógica. Exemplo: (A <=> B) || (C && D)" type="text" id="expression">
         <button class="generateButton" onclick="generateTruthTable()">Gerar</button>
       </div>
       <div style="display: flex; align-items: center; justify-content: center;">
