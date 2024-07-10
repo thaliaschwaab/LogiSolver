@@ -112,7 +112,7 @@ function generateTruthTable() {
   table.forEach(row => {
     html += '<tr>';
     variables.forEach(variable => {
-      html += `<td>${row[variable] ? 'T' : 'F'}</td>`;
+      html += `<td>${row[variable] ? 'V' : 'F'}</td>`;
     });
     expressions.forEach((exp, index) => {
       let result = row[exp] ? 'V' : 'F';
